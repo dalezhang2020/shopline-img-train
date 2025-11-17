@@ -1,0 +1,48 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Data (will be mounted as volume)
+data/raw/*
+data/images/*
+data/augmented/*
+data/embeddings/*
+
+# Models (will be mounted as volume)
+models/weights/*
+
+# Output
+output/*
+logs/*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Documentation
+*.md
+docs/
+
+# Jupyter
+*.ipynb
+.ipynb_checkpoints/
