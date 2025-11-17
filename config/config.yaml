@@ -1,9 +1,17 @@
-# Shopline API Configuration
-shopline:
-  api_url: "https://api.shoplineapp.com"
-  api_version: "v1"
-  access_token: ""  # Set via environment variable SHOPLINE_ACCESS_TOKEN
-  shop_name: ""     # Set via environment variable SHOPLINE_SHOP_NAME
+# MySQL Database Configuration
+mysql:
+  host: "localhost"          # Set via environment variable MYSQL_HOST
+  port: 3306                 # Set via environment variable MYSQL_PORT
+  database: ""               # Set via environment variable MYSQL_DATABASE
+  user: ""                   # Set via environment variable MYSQL_USER
+  password: ""               # Set via environment variable MYSQL_PASSWORD
+
+# Shopline API Configuration (Optional - if you still need API access)
+# shopline:
+#   api_url: "https://api.shoplineapp.com"
+#   api_version: "v1"
+#   access_token: ""  # Set via environment variable SHOPLINE_ACCESS_TOKEN
+#   shop_name: ""     # Set via environment variable SHOPLINE_SHOP_NAME
 
 # Product Categories
 categories:

@@ -21,7 +21,12 @@ install:
 	@echo "✓ Installation complete"
 
 download:
-	@echo "Downloading SKU data..."
+	@echo "Downloading SKU data from MySQL..."
+	python scripts/download_from_mysql.py --download-images --use-optimized-query
+	@echo "✓ Download complete"
+
+download-api:
+	@echo "Downloading SKU data from Shopline API..."
 	python scripts/download_sku_data.py --download-images
 	@echo "✓ Download complete"
 
