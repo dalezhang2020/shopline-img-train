@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: shopline-postgres
+    environment:
+      POSTGRES_DB: shopline_db
+      POSTGRES_USER: shopline_user
+      POSTGRES_PASSWORD: shopline_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shopline_user -d shopline_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: .
+    container_name: shopline-api
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+asyncpg://shopline_user:shopline_pass@postgres:5432/shopline_db
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    command: python main.py
+
+volumes:
+  postgres_data:
