@@ -1,0 +1,67 @@
+# Shopline API Configuration
+shopline:
+  api_url: "https://api.shoplineapp.com"
+  api_version: "v1"
+  access_token: ""  # Set via environment variable SHOPLINE_ACCESS_TOKEN
+  shop_name: ""     # Set via environment variable SHOPLINE_SHOP_NAME
+
+# Product Categories
+categories:
+  - DECOR
+  - FURNITURE
+  - GALLERY
+  - HOME TEXTILES
+  - LIGHTING
+  - SEASONAL
+
+# CLIP Model Configuration
+clip:
+  model_name: "ViT-B/32"  # Options: ViT-B/32, ViT-B/16, ViT-L/14
+  pretrained: "openai"
+  device: "cuda"  # cuda or cpu
+  batch_size: 32
+  image_size: 224
+
+# Grounding DINO Configuration
+grounding_dino:
+  config_file: "GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py"
+  checkpoint_path: "weights/groundingdino_swint_ogc.pth"
+  device: "cuda"
+  box_threshold: 0.35
+  text_threshold: 0.25
+  # Text prompts for detection
+  prompts:
+    - "retail product"
+    - "furniture item"
+    - "decor item"
+    - "home textile product"
+    - "lighting fixture"
+    - "seasonal decoration"
+
+# FAISS Vector Database Configuration
+faiss:
+  index_type: "IndexFlatL2"  # Options: IndexFlatL2, IndexIVFFlat, IndexHNSWFlat
+  dimension: 512  # CLIP ViT-B/32 output dimension
+  nlist: 100  # Number of clusters for IVF
+  save_path: "data/embeddings/faiss_index.bin"
+  metadata_path: "data/embeddings/sku_metadata.pkl"
+
+# Data Paths
+paths:
+  raw_data: "data/raw"
+  images: "data/images"
+  embeddings: "data/embeddings"
+  weights: "models/weights"
+
+# Inference Configuration
+inference:
+  confidence_threshold: 0.7
+  top_k: 5  # Return top-k similar SKUs
+  enable_visualization: true
+  output_dir: "output"
+
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/app.log"
