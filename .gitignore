@@ -39,6 +39,10 @@ ENV/
 *.log
 logs/
 
+# Output directories
+augmented_images/
+test_output/
+
 # OS
 .DS_Store
 Thumbs.db
