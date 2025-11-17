@@ -35,9 +35,11 @@ ENV/
 # Data
 data/raw/*
 data/images/*
+data/augmented/*
 data/embeddings/*
 !data/raw/.gitkeep
 !data/images/.gitkeep
+!data/augmented/.gitkeep
 !data/embeddings/.gitkeep
 
 # Models

@@ -21,7 +21,17 @@ install:
 	@echo "✓ Installation complete"
 
 download:
-	@echo "Downloading SKU data from MySQL..."
+	@echo "Downloading SKU data and creating augmented images..."
+	python scripts/download_and_augment.py --enable-augmentation --num-augmentations 5
+	@echo "✓ Download complete"
+
+download-no-aug:
+	@echo "Downloading SKU data (without augmentation)..."
+	python scripts/download_and_augment.py --no-augmentation
+	@echo "✓ Download complete"
+
+download-mysql:
+	@echo "Downloading SKU data from MySQL (legacy)..."
 	python scripts/download_from_mysql.py --download-images --use-optimized-query
 	@echo "✓ Download complete"
 
@@ -31,8 +41,13 @@ download-api:
 	@echo "✓ Download complete"
 
 build:
-	@echo "Building vector database..."
-	python scripts/build_vector_db.py
+	@echo "Building vector database with augmented images..."
+	python scripts/build_vector_db_augmented.py --use-augmented
+	@echo "✓ Build complete"
+
+build-original-only:
+	@echo "Building vector database (original images only)..."
+	python scripts/build_vector_db_augmented.py --original-only
 	@echo "✓ Build complete"
 
 inference:

@@ -271,6 +271,48 @@ class MySQLClient:
 
         return results
 
+    def get_sku_from_scm_table(self) -> List[Dict[str, Any]]:
+        """
+        Fetch SKUs from api_scm_skuinfo table (Shopline specific)
+
+        This method is specifically designed for the api_scm_skuinfo table
+        which contains SKU, ProductGroup, and image_url fields.
+
+        Returns:
+            List of SKU data with images
+
+        Table structure:
+            - SKU: SKU identifier
+            - ProductGroup: Product category/group
+            - image_url: Product image URL
+        """
+        query = """
+            SELECT
+                SKU as sku,
+                ProductGroup as category,
+                image_url,
+                SKU as product_title,
+                '' as variant_title,
+                NULL as price,
+                0 as inventory_quantity,
+                NULL as weight,
+                NULL as barcode,
+                NULL as variant_id,
+                NULL as product_id
+            FROM api_scm_skuinfo
+            WHERE ProductGroup <> '**'
+              AND image_url <> '**'
+              AND SKU IS NOT NULL
+              AND image_url IS NOT NULL
+            ORDER BY SKU
+        """
+
+        logger.info("Fetching SKUs from api_scm_skuinfo table")
+        results = self.execute_query(query)
+        logger.info(f"Retrieved {len(results)} SKUs from api_scm_skuinfo")
+
+        return results
+
     def extract_sku_data(self, product: Dict[str, Any]) -> List[Dict[str, Any]]:
         """
         Extract SKU data from product information
