@@ -263,7 +263,21 @@ class SKURecognitionPipeline:
                         'barcode': result.get('barcode', ''),
                     })
 
-            return formatted_results
+            # Deduplicate by SKU - keep only the highest similarity for each SKU
+            sku_best_match = {}
+            for result in formatted_results:
+                sku = result['sku']
+                if sku not in sku_best_match or result['similarity'] > sku_best_match[sku]['similarity']:
+                    sku_best_match[sku] = result
+
+            # Sort by similarity (descending) and limit to top_k
+            deduplicated_results = sorted(
+                sku_best_match.values(),
+                key=lambda x: x['similarity'],
+                reverse=True
+            )[:top_k]
+
+            return deduplicated_results
 
         # Training mode: use detector for product detection
         logger.debug("Processing image with detector (training mode)")
