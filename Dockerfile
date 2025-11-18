@@ -75,11 +75,16 @@ COPY --chown=apiuser:apiuser config/config.yaml config/
 USER apiuser
 
 # Set environment variables
+# Optimized for AWS c6id.2xlarge (8 vCPU, 16GB RAM, Intel Ice Lake)
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONPATH=/app \
     DEVICE=cpu \
     CLIP_MODEL=ViT-L/14 \
+    # PyTorch CPU optimizations for c6id.2xlarge (8 vCPU)
+    OMP_NUM_THREADS=4 \
+    MKL_NUM_THREADS=4 \
+    OPENBLAS_NUM_THREADS=4 \
     # Vector database download URLs (public S3)
     FAISS_URL="https://s3.us-east-2.amazonaws.com/tools.zgallerie.com/model/faiss_index_robust_5x.bin" \
     METADATA_URL="https://s3.us-east-2.amazonaws.com/tools.zgallerie.com/model/sku_metadata_robust_5x.pkl" \
@@ -157,17 +162,23 @@ fi\n\
 echo ""\n\
 echo "Starting Gunicorn + Uvicorn workers..."\n\
 echo "Port: 6007"\n\
-echo "Workers: 4"\n\
+echo "Workers: 6 (optimized for c6id.2xlarge: 8 vCPU)"\n\
 echo "==========================================="\n\
 echo ""\n\
 \n\
 # Start Gunicorn with Uvicorn workers\n\
+# Optimized for AWS c6id.2xlarge (8 vCPU, 16GB RAM):\n\
+# - 6 workers = (8 vCPU - 2 for system) = optimal for I/O bound tasks\n\
+# - worker-tmp-dir in /dev/shm for faster heartbeat checks\n\
 exec gunicorn scripts.api_server:app \\\n\
     --bind 0.0.0.0:6007 \\\n\
-    --workers 4 \\\n\
+    --workers 6 \\\n\
     --worker-class uvicorn.workers.UvicornWorker \\\n\
+    --worker-tmp-dir /dev/shm \\\n\
     --timeout 120 \\\n\
     --keep-alive 5 \\\n\
+    --max-requests 1000 \\\n\
+    --max-requests-jitter 50 \\\n\
     --access-logfile - \\\n\
     --error-logfile - \\\n\
     --log-level info\n\
