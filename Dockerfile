@@ -167,18 +167,23 @@ fi\n\
 echo ""\n\
 echo "Starting Gunicorn + Uvicorn workers..."\n\
 echo "Port: 6007"\n\
-echo "Workers: 6 (optimized for c6id.2xlarge: 8 vCPU)"\n\
+echo "Workers: 2 (minimized to prevent OOM with ViT-L/14)"\n\
+echo "Preload: enabled (share CLIP model in memory)"\n\
 echo "==========================================="\n\
 echo ""\n\
 \n\
 # Start Gunicorn with Uvicorn workers\n\
-# Optimized for AWS c6id.2xlarge (8 vCPU, 16GB RAM):\n\
-# - 6 workers = (8 vCPU - 2 for system) = optimal for I/O bound tasks\n\
+# Optimized for AWS c6id.2xlarge (8 vCPU, 16GB RAM) with CLIP ViT-L/14:\n\
+# - 2 workers (minimized) to prevent OOM\n\
+# - --preload to load model once and share across workers (saves RAM)\n\
+# - Each worker: ~1.5GB shared model + 0.5GB overhead per worker\n\
+# - Total: 1.5GB (shared) + 2 * 0.5GB (workers) + 0.36GB (FAISS) = ~2.9GB\n\
 # - worker-tmp-dir in /dev/shm for faster heartbeat checks\n\
 exec gunicorn scripts.api_server:app \\\n\
     --bind 0.0.0.0:6007 \\\n\
-    --workers 6 \\\n\
+    --workers 2 \\\n\
     --worker-class uvicorn.workers.UvicornWorker \\\n\
+    --preload \\\n\
     --worker-tmp-dir /dev/shm \\\n\
     --timeout 120 \\\n\
     --keep-alive 5 \\\n\
