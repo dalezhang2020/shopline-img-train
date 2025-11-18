@@ -202,18 +202,30 @@ class SKURecognitionPipeline:
         text_prompt: Optional[str] = None,
         visualize: bool = False,
         output_dir: Optional[Path] = None,
+        top_k: Optional[int] = None,
+        confidence_threshold: Optional[float] = None,
     ) -> List[Dict[str, Any]]:
         """
         Complete pipeline: detect products and recognize SKUs
 
+        For API mode (when top_k and confidence_threshold are provided):
+          - Skip detection, directly recognize SKU from full image
+          - Return flat list of SKU matches with deduplication
+
+        For detection mode (when top_k and confidence_threshold are None):
+          - Detect products first, then recognize each detected region
+          - Return detection results with nested SKU matches
+
         Args:
             image: Input image
-            text_prompt: Text prompt for detection
+            text_prompt: Text prompt for detection (detection mode only)
             visualize: Whether to save visualizations
             output_dir: Directory to save outputs
+            top_k: Number of top results to return (API mode)
+            confidence_threshold: Minimum confidence score (API mode)
 
         Returns:
-            List of detection results with SKU information
+            List of SKU matches or detection results
         """
         # Load image if path
         if isinstance(image, (str, Path)):
@@ -222,6 +234,51 @@ class SKURecognitionPipeline:
         else:
             image_path = None
 
+        # API Mode: Direct SKU recognition without detection
+        if top_k is not None and confidence_threshold is not None:
+            # Extract CLIP embedding from full image
+            embedding = self.clip_model.encode_image(image)
+
+            # Search in database with larger k to account for duplicates
+            search_k = top_k * 3  # Get more results for deduplication
+            results, similarities = self.vector_db.search(
+                embedding,
+                k=search_k,
+                return_distances=True,
+            )
+
+            # Format results with metadata
+            formatted_results = []
+            for result, similarity in zip(results, similarities):
+                if similarity >= confidence_threshold:
+                    formatted_results.append({
+                        'sku': result.get('sku'),
+                        'similarity': float(similarity),
+                        'product_title': result.get('title'),
+                        'category': result.get('category'),
+                        'retail_price': result.get('retail_price'),
+                        'image_url': result.get('image_url'),
+                        'barcode': result.get('barcode'),
+                    })
+
+            # Deduplicate by SKU - keep only the highest similarity for each SKU
+            sku_best_match = {}
+            for result in formatted_results:
+                sku = result['sku']
+                if sku not in sku_best_match or result['similarity'] > sku_best_match[sku]['similarity']:
+                    sku_best_match[sku] = result
+
+            # Sort by similarity (descending) and limit to top_k
+            deduplicated_results = sorted(
+                sku_best_match.values(),
+                key=lambda x: x['similarity'],
+                reverse=True
+            )[:top_k]
+
+            logger.info(f"Found {len(deduplicated_results)} unique SKU matches (from {len(formatted_results)} total matches)")
+            return deduplicated_results
+
+        # Detection Mode: Original pipeline with detection
         # Step 1: Detect products
         boxes, scores, labels = self.detect_products(image, text_prompt)
 
