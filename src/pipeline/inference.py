@@ -8,7 +8,13 @@ from PIL import Image
 import yaml
 
 from ..models.clip_encoder import CLIPEncoder
-from ..models.grounding_dino import GroundingDINODetector
+try:
+    from ..models.grounding_dino import GroundingDINODetector
+    GROUNDING_DINO_AVAILABLE = True
+except ImportError:
+    # GroundingDINO not available (production mode without cv2)
+    GroundingDINODetector = None
+    GROUNDING_DINO_AVAILABLE = False
 from ..database.vector_db import VectorDatabase
 from ..utils.image_utils import load_image
 
@@ -95,8 +101,12 @@ class SKURecognitionPipeline:
             batch_size=clip_config.get('batch_size', 32),
         )
 
-    def _init_detector(self) -> GroundingDINODetector:
-        """Initialize Grounding DINO detector"""
+    def _init_detector(self) -> Optional['GroundingDINODetector']:
+        """Initialize Grounding DINO detector (if available)"""
+        if not GROUNDING_DINO_AVAILABLE:
+            logger.warning("GroundingDINO not available (cv2 not installed). Detector disabled.")
+            return None
+
         dino_config = self.config.get('grounding_dino', {})
         return GroundingDINODetector(
             config_file=dino_config.get('config_file'),
