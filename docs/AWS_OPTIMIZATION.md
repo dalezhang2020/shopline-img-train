@@ -13,13 +13,18 @@
 ### 1. Gunicorn Workers
 
 ```bash
---workers 6  # (8 vCPU - 2 for system/OS)
+--workers 4  # 针对 CLIP ViT-L/14 优化（防止 OOM）
+--preload-app  # 在 fork 前加载模型，共享内存
 --worker-tmp-dir /dev/shm  # 使用共享内存加速heartbeat
 --max-requests 1000  # 防止内存泄漏
 --max-requests-jitter 50  # 避免所有worker同时重启
 ```
 
-**公式**: `workers = (CPU核心数 - 1) 或 (CPU核心数 - 2)`
+**重要**: 使用 `--preload-app` 可以在所有 workers 间共享 CLIP 模型，节省 ~6GB 内存
+
+**公式**:
+- 一般情况: `workers = (CPU核心数 - 1)` 或 `(CPU核心数 - 2)`
+- 大模型 (ViT-L/14): `workers = 4` (平衡性能和内存)
 
 ### 2. PyTorch CPU 线程配置
 
@@ -30,8 +35,8 @@ OPENBLAS_NUM_THREADS=4
 ```
 
 **配置原理**:
-- 6个workers × 4线程 = 24个线程
-- 由于超线程和I/O等待,实际CPU利用率会保持在70-90%
+- 4个workers × 4线程 = 16个线程
+- 由于超线程和I/O等待,实际CPU利用率会保持在60-80%
 
 ### 3. CLIP批处理
 
@@ -40,19 +45,29 @@ clip:
   batch_size: 32  # 增大批处理以充分利用CPU
 ```
 
-### 4. 内存使用估算
+### 4. 内存使用估算 (使用 --preload-app)
 
 **每个组件内存占用**:
-- CLIP ViT-L/14模型: ~1.5 GB (per worker)
+- CLIP ViT-L/14模型: ~1.5 GB (共享)
 - FAISS索引: ~350 MB (共享)
 - 向量元数据: ~10 MB (共享)
-- Gunicorn worker开销: ~100 MB (per worker)
+- Gunicorn worker开销: ~500 MB (per worker)
 
-**总内存**:
-- 6个workers × (1.5 GB模型 + 0.1 GB开销) = 9.6 GB
+**总内存 (优化后)**:
+- 共享模型: 1.5 GB (使用 --preload-app 只加载一次)
+- 4个workers × 0.5 GB开销 = 2.0 GB
 - 共享数据: 0.36 GB
 - 系统开销: 1-2 GB
-- **总计**: ~11-12 GB / 16 GB = **75%利用率** ✅
+- **总计**: ~4.9-5.9 GB / 16 GB = **30-37%利用率** ✅
+
+**对比 (不使用 --preload-app)**:
+- 4个workers × 1.5 GB模型 = 6.0 GB
+- 4个workers × 0.5 GB开销 = 2.0 GB
+- 共享数据: 0.36 GB
+- 系统开销: 1-2 GB
+- **总计**: ~9.4-10.4 GB / 16 GB = **59-65%利用率**
+
+⚠️ **重要**: 6个workers 会导致 OOM (超过 16GB)，因此减少到 4 个
 
 ### 5. 系统优化
 
