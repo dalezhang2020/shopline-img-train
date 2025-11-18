@@ -70,7 +70,13 @@ COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/pytho
 COPY --from=builder /usr/local/bin /usr/local/bin
 
 # Copy only necessary application code (exclude training scripts, data, etc.)
-COPY --chown=apiuser:apiuser src/ src/
+# Production API only needs: CLIP encoder, vector database, inference pipeline, and image utilities
+COPY --chown=apiuser:apiuser src/__init__.py src/
+COPY --chown=apiuser:apiuser src/models/ src/models/
+COPY --chown=apiuser:apiuser src/database/ src/database/
+COPY --chown=apiuser:apiuser src/pipeline/ src/pipeline/
+COPY --chown=apiuser:apiuser src/utils/__init__.py src/utils/
+COPY --chown=apiuser:apiuser src/utils/image_utils.py src/utils/
 COPY --chown=apiuser:apiuser scripts/api_server.py scripts/
 COPY --chown=apiuser:apiuser config/config.yaml config/
 
