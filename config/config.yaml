@@ -30,21 +30,14 @@ clip:
   batch_size: 16  # Reduced batch size for ViT-L/14 (larger model)
   image_size: 224
 
-# Grounding DINO Configuration
+# Grounding DINO Configuration (DISABLED for production - not needed for SKU recognition)
 grounding_dino:
+  enabled: false  # Set to true only if you need object detection
   config_file: "GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py"
   checkpoint_path: "weights/groundingdino_swint_ogc.pth"
-  device: "cpu"  # set to 'cpu' for Apple Silicon M4 Pro
+  device: "cpu"
   box_threshold: 0.35
   text_threshold: 0.25
-  # Text prompts for detection
-  prompts:
-    - "retail product"
-    - "furniture item"
-    - "decor item"
-    - "home textile product"
-    - "lighting fixture"
-    - "seasonal decoration"
 
 # FAISS Vector Database Configuration
 faiss:

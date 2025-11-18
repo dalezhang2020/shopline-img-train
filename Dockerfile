@@ -26,7 +26,7 @@
 # ============================================================================
 # Stage 1: Builder - Install dependencies
 # ============================================================================
-FROM python:3.10-slim as builder
+FROM python:3.11-slim as builder
 
 # Install build dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -46,7 +46,7 @@ RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
 # ============================================================================
 # Stage 2: Runtime - Lightweight production image
 # ============================================================================
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 # Install minimal runtime dependencies
 # Only what's needed for: torch, PIL, FAISS, and curl
@@ -63,7 +63,7 @@ RUN useradd -m -u 1000 -s /bin/bash apiuser && \
 WORKDIR /app
 
 # Copy Python packages from builder
-COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
+COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
 COPY --from=builder /usr/local/bin /usr/local/bin
 
 # Copy only necessary application code (exclude training scripts, data, etc.)

@@ -48,7 +48,10 @@ class SKURecognitionPipeline:
 
         # Initialize components
         self.clip_model = clip_model or self._init_clip()
-        self.detector = detector or self._init_detector()
+        # GroundingDINO detector is optional - only initialize if explicitly configured
+        self.detector = detector if detector is not None else (
+            self._init_detector() if self.config.get('grounding_dino', {}).get('enabled', False) else None
+        )
         self.vector_db = vector_db or self._init_vector_db()
 
         # Inference settings
