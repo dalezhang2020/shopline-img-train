@@ -71,7 +71,6 @@ WORKDIR /app
 # Copy Python packages from builder
 COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
 COPY --from=builder /usr/local/bin /usr/local/bin
-COPY --from=builder /root/.cache /root/.cache
 
 # Copy application code
 COPY --chown=apiuser:apiuser . .
