@@ -149,14 +149,16 @@ async def startup_event():
         logger.info("📦 Loading SKU recognition pipeline...")
         state.pipeline = SKURecognitionPipeline(config_path=str(config_path))
 
-        # Load vector database
-        index_path = PROJECT_ROOT / 'data' / 'embeddings' / 'faiss_index.bin'
-        metadata_path = PROJECT_ROOT / 'data' / 'embeddings' / 'sku_metadata.pkl'
+        # Load vector database (from S3 download in entrypoint.sh)
+        index_path = PROJECT_ROOT / 'data' / 'embeddings' / 'faiss_index_robust_5x.bin'
+        metadata_path = PROJECT_ROOT / 'data' / 'embeddings' / 'sku_metadata_robust_5x.pkl'
 
         if not index_path.exists() or not metadata_path.exists():
             raise FileNotFoundError(
-                f"Vector database not found. Please run:\n"
-                f"python scripts/build_robust_vector_db.py --augment-per-image 2"
+                f"Vector database not found at:\n"
+                f"  {index_path}\n"
+                f"  {metadata_path}\n"
+                f"Check if S3 download failed in entrypoint.sh"
             )
 
         state.pipeline.load_database(
