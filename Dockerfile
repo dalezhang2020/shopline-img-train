@@ -36,12 +36,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /build
 
-# Copy and install Python dependencies
-COPY requirements.txt .
+# Copy and install Python dependencies (production only)
+COPY requirements-prod.txt .
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
-    pip install --no-cache-dir -r requirements.txt && \
-    # Install boto3 for S3 access
-    pip install --no-cache-dir boto3>=1.28.0 && \
+    pip install --no-cache-dir -r requirements-prod.txt && \
     # Pre-download CLIP model to cache
     python -c "import open_clip; open_clip.create_model_and_transforms('ViT-L-14', pretrained='openai')"
 
@@ -50,14 +48,10 @@ RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
 # ============================================================================
 FROM python:3.10-slim
 
-# Install runtime dependencies
+# Install minimal runtime dependencies
+# Only what's needed for: torch, PIL, FAISS, and curl
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgomp1 \
-    libglib2.0-0 \
-    libsm6 \
-    libxext6 \
-    libxrender1 \
-    libgl1 \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
@@ -72,8 +66,10 @@ WORKDIR /app
 COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
 COPY --from=builder /usr/local/bin /usr/local/bin
 
-# Copy application code
-COPY --chown=apiuser:apiuser . .
+# Copy only necessary application code (exclude training scripts, data, etc.)
+COPY --chown=apiuser:apiuser src/ src/
+COPY --chown=apiuser:apiuser scripts/api_server.py scripts/
+COPY --chown=apiuser:apiuser config/config.yaml config/
 
 # Switch to non-root user
 USER apiuser
