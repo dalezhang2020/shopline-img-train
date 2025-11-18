@@ -29,7 +29,9 @@
 FROM python:3.11-slim as builder
 
 # Install build dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# Set DEBIAN_FRONTEND to suppress debconf warnings
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     build-essential \
     git \
     && rm -rf /var/lib/apt/lists/*
@@ -50,7 +52,8 @@ FROM python:3.11-slim
 
 # Install minimal runtime dependencies
 # Only what's needed for: torch, PIL, FAISS, and curl
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     libgomp1 \
     curl \
     && rm -rf /var/lib/apt/lists/*
@@ -79,6 +82,8 @@ USER apiuser
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONPATH=/app \
+    # Suppress Python warnings in production
+    PYTHONWARNINGS="ignore::UserWarning,ignore::FutureWarning" \
     DEVICE=cpu \
     CLIP_MODEL=ViT-L/14 \
     # PyTorch CPU optimizations for c6id.2xlarge (8 vCPU)
