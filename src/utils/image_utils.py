@@ -5,7 +5,13 @@ from typing import Union, Tuple, Optional
 from pathlib import Path
 import numpy as np
 from PIL import Image
-import cv2
+
+# cv2 is optional - only needed for advanced numpy array operations
+try:
+    import cv2
+    CV2_AVAILABLE = True
+except ImportError:
+    CV2_AVAILABLE = False
 
 logger = logging.getLogger(__name__)
 
@@ -41,9 +47,12 @@ def save_image(image: Union[Image.Image, np.ndarray], output_path: Union[str, Pa
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
         if isinstance(image, np.ndarray):
-            # Convert BGR to RGB if needed
-            if len(image.shape) == 3 and image.shape[2] == 3:
+            # Convert BGR to RGB if needed (requires cv2)
+            if CV2_AVAILABLE and len(image.shape) == 3 and image.shape[2] == 3:
                 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+            else:
+                # Fallback: assume RGB if cv2 not available
+                pass
             image = Image.fromarray(image)
 
         image.save(output_path)
@@ -79,6 +88,17 @@ def resize_image(
             image = image.resize(size, Image.Resampling.LANCZOS)
         return image
     else:
+        # For numpy arrays, convert to PIL and back (cv2 not required)
+        if not CV2_AVAILABLE:
+            # Fallback to PIL for numpy arrays
+            pil_img = Image.fromarray(image)
+            if keep_aspect_ratio:
+                pil_img.thumbnail(size, Image.Resampling.LANCZOS)
+            else:
+                pil_img = pil_img.resize(size, Image.Resampling.LANCZOS)
+            return np.array(pil_img)
+
+        # Use cv2 if available (faster for numpy arrays)
         if keep_aspect_ratio:
             h, w = image.shape[:2]
             target_w, target_h = size
