@@ -170,9 +170,8 @@ exec gunicorn scripts.api_server:app \\\n\
     --bind 0.0.0.0:6007 \\\n\
     --workers 4 \\\n\
     --worker-class uvicorn.workers.UvicornWorker \\\n\
-    --threads 2 \\\n\
     --timeout 120 \\\n\
-    --keepalive 5 \\\n\
+    --keep-alive 5 \\\n\
     --access-logfile - \\\n\
     --error-logfile - \\\n\
     --log-level info\n\
