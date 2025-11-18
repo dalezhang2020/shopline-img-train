@@ -101,6 +101,8 @@ ALLOWED_ORIGINS = [
     "https://tools.zgallerie.com",
     "https://zgallerie.com",
     "https://www.zgallerie.com",
+    # Vercel 前端
+    "https://zg-wms-store.vercel.app",
 ]
 
 app.add_middleware(
