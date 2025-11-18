@@ -1,0 +1,84 @@
+# ============================================================================
+# GitLab CI/CD - SKU Recognition API
+# ============================================================================
+# Auto-build and push Docker image to GitLab Container Registry
+# Vector database will be downloaded from S3 at container startup
+# ============================================================================
+
+stages:
+  - build
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: "/certs"
+
+build:
+  image: docker:24-git
+  services:
+    - docker:24-dind
+  stage: build
+
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
+    - echo "Building SKU Recognition API Docker image..."
+    - echo "Branch: $CI_COMMIT_REF_NAME"
+    - echo "Commit: $CI_COMMIT_SHORT_SHA"
+
+  script:
+    # Build Docker image
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG .
+
+    # Push commit SHA tag
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+
+    # Push branch name tag
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+
+    # Push 'latest' and 'stable' tags for main/master branch
+    - |
+      if [[ "$CI_COMMIT_REF_NAME" == "main" || "$CI_COMMIT_REF_NAME" == "master" ]]; then
+        docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA $CI_REGISTRY_IMAGE:latest
+        docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA $CI_REGISTRY_IMAGE:stable
+        docker push $CI_REGISTRY_IMAGE:latest
+        docker push $CI_REGISTRY_IMAGE:stable
+        echo "✅ Pushed 'latest' and 'stable' tags"
+      fi
+
+    # Push version tag if Git tag
+    - |
+      if [[ -n "$CI_COMMIT_TAG" ]]; then
+        docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+        docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+        echo "✅ Pushed version tag: $CI_COMMIT_TAG"
+      fi
+
+  after_script:
+    - echo "=========================================="
+    - echo "✅ Docker image built successfully!"
+    - echo "=========================================="
+    - echo "Available tags:"
+    - echo "  - $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
+    - echo "  - $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
+    - |
+      if [[ "$CI_COMMIT_REF_NAME" == "main" || "$CI_COMMIT_REF_NAME" == "master" ]]; then
+        echo "  - $CI_REGISTRY_IMAGE:latest"
+        echo "  - $CI_REGISTRY_IMAGE:stable"
+      fi
+    - echo ""
+    - echo "To run on AWS server (vector database auto-downloads from S3):"
+    - echo "  docker pull $CI_REGISTRY_IMAGE:latest"
+    - echo "  docker run -d -p 6007:6007 --name sku-recognition-api \\"
+    - echo "    --restart unless-stopped \\"
+    - echo "    $CI_REGISTRY_IMAGE:latest"
+    - echo ""
+    - echo "Vector database URLs (public S3):"
+    - echo "  - FAISS: https://s3.us-east-2.amazonaws.com/tools.zgallerie.com/model/faiss_index_robust_5x.bin"
+    - echo "  - Metadata: https://s3.us-east-2.amazonaws.com/tools.zgallerie.com/model/sku_metadata_robust_5x.pkl"
+    - echo "=========================================="
+
+  only:
+    - main
+    - master
+    - develop
+    - tags
+    - merge_requests  

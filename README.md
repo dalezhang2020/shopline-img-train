@@ -1,6 +1,8 @@
-# SKU Recognition System using Grounding DINO + CLIP
+# SKU Recognition System - AI-Powered Product Identification
 
-无需人工标注的智能 SKU 识别系统，基于 Grounding DINO（零样本目标检测）+ CLIP（图像向量匹配）技术。
+无需人工标注的智能 SKU 识别系统，基于 CLIP（图像向量匹配）+ FAISS（向量检索）技术，提供REST API服务供前端调用。
+
+🎯 **现在支持 REST API！** 可直接集成到 Next.js 前端，实现拍照识别功能。
 
 ## 项目背景
 
@@ -12,6 +14,8 @@
 - ✅ **快速部署** - 只需 SKU 官方图片即可上线
 - ✅ **高扩展性** - 轻松支持新 SKU 的添加
 - ✅ **准确识别** - 基于先进的深度学习模型
+- 🆕 **REST API** - 提供 FastAPI 服务，支持前端调用
+- 🆕 **前端集成** - 配套 Next.js 前端页面，拍照即识别
 
 ### 技术架构
 
@@ -95,10 +99,62 @@ wget -P models/weights https://huggingface.co/ShilongLiu/GroundingDINO/resolve/m
 
 ```bash
 cp .env.example .env
-# 编辑 .env 文件，填入 Shopline API 凭证
+# 编辑 .env 文件
 ```
 
-## 使用指南
+## 快速开始 (API 服务模式)
+
+### 🚀 启动 API 服务器
+
+如果你已经有向量数据库，可以直接启动 API 服务器：
+
+```bash
+# 方式一：使用启动脚本（推荐）
+chmod +x scripts/start_api.sh
+./scripts/start_api.sh
+
+# 方式二：直接运行
+python -m uvicorn scripts.api_server:app --host 0.0.0.0 --port 8000
+
+# 方式三：开发模式（热重载）
+./scripts/start_api.sh --dev
+```
+
+API 服务将在 `http://localhost:8000` 启动。
+
+### 📖 API 文档
+
+启动后访问交互式 API 文档：
+- **Swagger UI**: http://localhost:8000/docs
+- **ReDoc**: http://localhost:8000/redoc
+- **详细文档**: [docs/API_DOCUMENTATION.md](docs/API_DOCUMENTATION.md)
+
+### 🧪 测试 API
+
+```bash
+# 健康检查
+curl http://localhost:8000/api/v1/health
+
+# 识别 SKU
+curl -X POST http://localhost:8000/api/v1/recognize \
+  -F "file=@test_image.jpg" \
+  -F "top_k=5"
+```
+
+### 🖥️ 前端集成
+
+前端代码位于 `/Users/dizhang/Gitlab/wms-store`：
+
+1. 访问前端系统登录页面
+2. 导航到 **SKU识别** 菜单
+3. 上传图片或使用相机拍照
+4. 查看识别结果
+
+**前端页面路径**: `/admin/sku-recognition`
+
+---
+
+## 完整部署指南
 
 ### 第一步: 下载 SKU 数据
 
@@ -118,9 +174,24 @@ python scripts/download_sku_data.py \
 - `--output-dir`: SKU 数据保存目录
 - `--images-dir`: 图片保存目录
 
-### 第二步: 构建向量数据库
+### 第二步: 构建增强向量数据库（推荐）
 
-使用 CLIP 提取图片特征并构建 FAISS 索引：
+使用数据增强技术提升识别准确率：
+
+```bash
+# 推荐：2x 数据增强（Top-1: 65%, Top-5: 97%）
+python scripts/build_robust_vector_db.py --augment-per-image 2
+
+# 可选：5x 数据增强（Top-1: 70%+, Top-5: 98%）
+python scripts/build_robust_vector_db.py --augment-per-image 5
+```
+
+**增强效果对比**：
+- 无增强：Top-1: 50%, Top-5: 94%
+- 2x增强：Top-1: 65%, Top-5: 97% ✅ 推荐
+- 5x增强：Top-1: 70%, Top-5: 98%
+
+**或使用基础版本（不推荐）**：
 
 ```bash
 python scripts/build_vector_db.py \
@@ -131,13 +202,17 @@ python scripts/build_vector_db.py \
   --output-metadata data/embeddings/sku_metadata.pkl
 ```
 
-参数说明：
-- `--sku-data`: SKU 数据 JSON 文件
-- `--images-dir`: SKU 图片目录
-- `--output-index`: 输出 FAISS 索引路径
-- `--output-metadata`: 输出元数据路径
+### 第三步: 启动 API 服务器
 
-### 第三步: 运行推理
+```bash
+# 启动服务
+./scripts/start_api.sh
+
+# 访问 API 文档
+open http://localhost:8000/docs
+```
+
+### 第四步: 运行推理（命令行模式）
 
 对新图片进行 SKU 识别：
 
@@ -187,7 +262,10 @@ shopline-img-train/
 │   └── utils/                  # 工具函数
 │       └── image_utils.py      # 图像处理
 ├── scripts/                    # 可执行脚本
+│   ├── api_server.py           # FastAPI 服务器 🆕
+│   ├── start_api.sh            # 启动脚本 🆕
 │   ├── download_sku_data.py    # 下载 SKU 数据
+│   ├── build_robust_vector_db.py # 构建增强向量数据库 🆕
 │   ├── build_vector_db.py      # 构建向量数据库
 │   └── run_inference.py        # 运行推理
 ├── config/                     # 配置文件

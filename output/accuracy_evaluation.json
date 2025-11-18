@@ -1,0 +1,2420 @@
+{
+  "total_tested": 100,
+  "top_k": 5,
+  "database_size": 4109,
+  "test_results": [
+    {
+      "image_name": "DPH00685-BLK.jpg",
+      "ground_truth": "DPH00685-BLK",
+      "predicted_top1": "DPH00685-BLK",
+      "predicted_topk": [
+        "DPH00685-BLK",
+        "DPH00685-WTE",
+        "DPH00628-BLK",
+        "DPH04868-WTE",
+        "DPH05168-BLK"
+      ],
+      "similarities": [
+        1.0,
+        0.7948483228683472,
+        0.742965817451477,
+        0.7380580306053162,
+        0.7220582962036133
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90086-LIN.jpg",
+      "ground_truth": "FBD90086-LIN",
+      "predicted_top1": "FBD90330-CCA",
+      "predicted_topk": [
+        "FBD90330-CCA",
+        "FBD90086-LIN",
+        "FBD90174-LIN",
+        "FBD90588-BON",
+        "FBD90323-BON"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9941238760948181,
+        0.9941238760948181
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90505-DOV-GD.jpg",
+      "ground_truth": "FBD90505-DOV-GD",
+      "predicted_top1": "FBD90624-DOV-GD",
+      "predicted_topk": [
+        "FBD90624-DOV-GD",
+        "FBD90507-DOV-GD",
+        "FBD90505-DOV-GD",
+        "FBD90507-GRY-GD",
+        "FBD90505-GRY-GD"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9984984397888184,
+        0.9984984397888184
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90693-OTT-BN.jpg",
+      "ground_truth": "FBD90693-OTT-BN",
+      "predicted_top1": "FBD90692-OTT-BN",
+      "predicted_topk": [
+        "FBD90692-OTT-BN",
+        "FBD90693-CHA-BN",
+        "FBD90692-CHA-BN",
+        "FBD90691-OTT-BN",
+        "FBD90693-OTT-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 5,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90692-CHI-BN.jpg",
+      "ground_truth": "FBD90692-CHI-BN",
+      "predicted_top1": "FBD90692-GUN-BN",
+      "predicted_topk": [
+        "FBD90692-GUN-BN",
+        "FBD90693-CHI-BN",
+        "FBD90691-CHI-BN",
+        "FBD90692-CHI-BN",
+        "FBD90693-GUN-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 4,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90624-DOV-GD.jpg",
+      "ground_truth": "FBD90624-DOV-GD",
+      "predicted_top1": "FBD90624-DOV-GD",
+      "predicted_topk": [
+        "FBD90624-DOV-GD",
+        "FBD90507-DOV-GD",
+        "FBD90505-DOV-GD",
+        "FBD90507-GRY-GD",
+        "FBD90505-GRY-GD"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9984984397888184,
+        0.9984984397888184
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FAR06783-COB.jpg",
+      "ground_truth": "FAR06783-COB",
+      "predicted_top1": "FAR06783-COB",
+      "predicted_topk": [
+        "FAR06783-COB",
+        "FAR06794-PEC",
+        "FAR06792-ASH",
+        "FAR06426-COB",
+        "FAR06437-IDG"
+      ],
+      "similarities": [
+        1.0,
+        0.9636014103889465,
+        0.9360728859901428,
+        0.9308767318725586,
+        0.9303908944129944
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "DDG00338-GOD.jpg",
+      "ground_truth": "DDG00338-GOD",
+      "predicted_top1": "DDG00338-GOD",
+      "predicted_topk": [
+        "DDG00338-GOD",
+        "DDG05627-WTE",
+        "DCA00126-GOD",
+        "DCA00291-GOD",
+        "DVA00487-GOD"
+      ],
+      "similarities": [
+        1.0,
+        0.7297651171684265,
+        0.7263495922088623,
+        0.7208153009414673,
+        0.7160386443138123
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "DVA00211-WTE.jpg",
+      "ground_truth": "DVA00211-WTE",
+      "predicted_top1": "DVA00211-WTE",
+      "predicted_topk": [
+        "DVA00211-WTE",
+        "DVA16702-SMK",
+        "DVA00094-SLV",
+        "DVA00569-WTE",
+        "DVA00564-WTE"
+      ],
+      "similarities": [
+        1.0,
+        0.790555477142334,
+        0.7829427123069763,
+        0.7793781161308289,
+        0.7777333855628967
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90568-BLK.jpg",
+      "ground_truth": "FBD90568-BLK",
+      "predicted_top1": "FBD90568-BLK",
+      "predicted_topk": [
+        "FBD90568-BLK",
+        "FBD90569-BLK",
+        "FBD90565-DBN",
+        "FBD90569-DBN",
+        "FBD90422-BRN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        0.995541512966156,
+        0.995541512966156,
+        0.995541512966156
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FAR06455-ALP.jpg",
+      "ground_truth": "FAR06455-ALP",
+      "predicted_top1": "FAR06455-ALP",
+      "predicted_topk": [
+        "FAR06455-ALP",
+        "FAR06450-CCA",
+        "FAR01910-PEL",
+        "FAR06448-BON",
+        "FAR04112-OTT"
+      ],
+      "similarities": [
+        1.0,
+        0.98956698179245,
+        0.9851705431938171,
+        0.9791626930236816,
+        0.9779607653617859
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FAR08856-IDG.jpg",
+      "ground_truth": "FAR08856-IDG",
+      "predicted_top1": "FAR08856-IDG",
+      "predicted_topk": [
+        "FAR08856-IDG",
+        "FAR08857-COB",
+        "FAR08847-PEC",
+        "FAR08848-BSP",
+        "FAR08855-GRN"
+      ],
+      "similarities": [
+        1.0,
+        0.9949415326118469,
+        0.9866454005241394,
+        0.9753088355064392,
+        0.9747376441955566
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90699-KSN.jpg",
+      "ground_truth": "FBD90699-KSN",
+      "predicted_top1": "FBD90698-KSN",
+      "predicted_topk": [
+        "FBD90698-KSN",
+        "FBD90697-KSN",
+        "FBD90699-KSN",
+        "FBD90697-OYS",
+        "FBD90699-OYS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.999884843826294,
+        0.999884843826294
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90693-IVY-BN.jpg",
+      "ground_truth": "FBD90693-IVY-BN",
+      "predicted_top1": "FBD90693-IVY-BN",
+      "predicted_topk": [
+        "FBD90693-IVY-BN",
+        "FBD90691-IVY-BN",
+        "FBD90692-IVY-BN",
+        "FBD90693-ALP-BN",
+        "FBD90692-ALP-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9994425177574158,
+        0.9994425177574158
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90743-ONY-BS.jpg",
+      "ground_truth": "FBD90743-ONY-BS",
+      "predicted_top1": "FBD90743-BLK-BS",
+      "predicted_topk": [
+        "FBD90743-BLK-BS",
+        "FBD90743-ONY-BS",
+        "FBD90744-BLK-BS",
+        "FBD90743-JET-BS",
+        "FBD90744-JET-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "DOB00330-GOD.jpg",
+      "ground_truth": "DOB00330-GOD",
+      "predicted_top1": "DOB00330-GOD",
+      "predicted_topk": [
+        "DOB00330-GOD",
+        "DOB00312-GOD",
+        "DOB00311-GOD",
+        "DOB00052-GOD",
+        "DOB00130-GOD"
+      ],
+      "similarities": [
+        1.0,
+        0.8537432551383972,
+        0.8020234107971191,
+        0.7600052356719971,
+        0.7061235904693604
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90699-BLK-AB.jpg",
+      "ground_truth": "FBD90699-BLK-AB",
+      "predicted_top1": "FBD90697-BLK-AB",
+      "predicted_topk": [
+        "FBD90697-BLK-AB",
+        "FBD90698-BLK-AB",
+        "FBD90699-BLK-AB",
+        "FBD90697-BLK-BN",
+        "FBD90698-BLK-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9993599057197571,
+        0.9993599057197571
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90692-BSP-BS.jpg",
+      "ground_truth": "FBD90692-BSP-BS",
+      "predicted_top1": "FBD90691-BSP-BS",
+      "predicted_topk": [
+        "FBD90691-BSP-BS",
+        "FBD90692-BSP-BS",
+        "FBD90693-BSP-BS",
+        "FBD90693-BSP-BN",
+        "FBD90691-BSP-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9990942478179932,
+        0.9990942478179932
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FAR11706-GRN.jpg",
+      "ground_truth": "FAR11706-GRN",
+      "predicted_top1": "FAR11706-GRN",
+      "predicted_topk": [
+        "FAR11706-GRN",
+        "FAR15048-BSP",
+        "FAR11705-GRN",
+        "FAR11704-GRN",
+        "FAR11703-GRN"
+      ],
+      "similarities": [
+        1.0,
+        0.9832170009613037,
+        0.974418044090271,
+        0.9733529686927795,
+        0.9712390303611755
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90607-OYS.jpg",
+      "ground_truth": "FBD90607-OYS",
+      "predicted_top1": "FBD90612-OYS",
+      "predicted_topk": [
+        "FBD90612-OYS",
+        "FBD90612-KSN",
+        "FBD90607-KSN",
+        "FBD90613-KSN",
+        "FBD90613-OYS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": null,
+      "top1_correct": false,
+      "topk_correct": false,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90550-PEL.jpg",
+      "ground_truth": "FBD90550-PEL",
+      "predicted_top1": "FBD90654-PEL",
+      "predicted_topk": [
+        "FBD90654-PEL",
+        "FBD90550-PEL",
+        "FBD90651-PEL",
+        "FBD90651-ALP",
+        "FBD90671-ALP"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9934030175209045,
+        0.9934030175209045
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "CHLB0975-BGE.jpg",
+      "ground_truth": "CHLB0975-BGE",
+      "predicted_top1": "CHLB0975-BGE",
+      "predicted_topk": [
+        "CHLB0975-BGE",
+        "CHLB0975-BRN",
+        "CHLB0971-BGE",
+        "CHLB0971-BRN",
+        "FAR03710-CRE"
+      ],
+      "similarities": [
+        1.0,
+        0.9333907961845398,
+        0.8840686082839966,
+        0.8812472224235535,
+        0.8422749042510986
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90511-GUN-BN.jpg",
+      "ground_truth": "FBD90511-GUN-BN",
+      "predicted_top1": "FBD90508-GUN-BN",
+      "predicted_topk": [
+        "FBD90508-GUN-BN",
+        "FBD90511-CHI-BN",
+        "FBD90504-CHI-BN",
+        "FBD90511-GUN-BN",
+        "FBD90508-CHI-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 4,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90625-WTE-BS.jpg",
+      "ground_truth": "FBD90625-WTE-BS",
+      "predicted_top1": "FBD90625-WTE-BS",
+      "predicted_topk": [
+        "FBD90625-WTE-BS",
+        "FBD90505-WTE-BS",
+        "FBD90507-WTE-BS",
+        "FBD90477-WTE",
+        "FBD90507-WTE-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9999371767044067,
+        0.9999371767044067
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90378-BLK.jpg",
+      "ground_truth": "FBD90378-BLK",
+      "predicted_top1": "FBD90219-BLK-01",
+      "predicted_topk": [
+        "FBD90219-BLK-01",
+        "FBD90378-BLK",
+        "FBD90275-BLK",
+        "FBD90732-IDG",
+        "FBD90734-IDG"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9613573551177979,
+        0.9613573551177979
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90743-RST.jpg",
+      "ground_truth": "FBD90743-RST",
+      "predicted_top1": "FBD90743-RST",
+      "predicted_topk": [
+        "FBD90743-RST",
+        "FBD90743-RST-AB",
+        "FBD90743-RST-BS",
+        "FBD90743-RST-BN",
+        "FBD90743-RST-GD"
+      ],
+      "similarities": [
+        1.0,
+        0.9981468915939331,
+        0.9978485107421875,
+        0.9977578520774841,
+        0.995375394821167
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90691-GRN-BN.jpg",
+      "ground_truth": "FBD90691-GRN-BN",
+      "predicted_top1": "FBD90692-GRN-BN",
+      "predicted_topk": [
+        "FBD90692-GRN-BN",
+        "FBD90693-GRN-BN",
+        "FBD90691-GRN-BN",
+        "FBD90691-GRN-BS",
+        "FBD90692-GRN-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9993398785591125,
+        0.9993398785591125
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90511-CHA-AB.jpg",
+      "ground_truth": "FBD90511-CHA-AB",
+      "predicted_top1": "FBD90508-CHA-AB",
+      "predicted_topk": [
+        "FBD90508-CHA-AB",
+        "FBD90504-ASH-AB",
+        "FBD90511-ASH-AB",
+        "FBD90511-CHA-AB",
+        "FBD90705-CHA-AB"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 4,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90411-GRY.jpg",
+      "ground_truth": "FBD90411-GRY",
+      "predicted_top1": "FBD90411-GRY",
+      "predicted_topk": [
+        "FBD90411-GRY",
+        "FBD90658-GRY",
+        "FBD90129-MOO",
+        "FBD90001-GRY",
+        "FBD90343-CNA"
+      ],
+      "similarities": [
+        1.0,
+        0.8938015103340149,
+        0.8927572965621948,
+        0.8925429582595825,
+        0.8919445872306824
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90559-IDG.jpg",
+      "ground_truth": "FBD90559-IDG",
+      "predicted_top1": "FBD90559-IDG",
+      "predicted_topk": [
+        "FBD90559-IDG",
+        "FBD90556-IDG",
+        "FBD90551-IDG",
+        "FBD90566-COB",
+        "FBD90558-COB"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9955374002456665,
+        0.9955374002456665
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90698-OTT.jpg",
+      "ground_truth": "FBD90698-OTT",
+      "predicted_top1": "FBD90698-OTT",
+      "predicted_topk": [
+        "FBD90698-OTT",
+        "FBD90699-OTT",
+        "FBD90698-OTT-BN",
+        "FBD90697-OTT-BN",
+        "FBD90697-CHA"
+      ],
+      "similarities": [
+        1.0,
+        0.9988093376159668,
+        0.997244119644165,
+        0.997244119644165,
+        0.9968036413192749
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90695-GRN.jpg",
+      "ground_truth": "FBD90695-GRN",
+      "predicted_top1": "FBD90696-GRN",
+      "predicted_topk": [
+        "FBD90696-GRN",
+        "FBD90694-GRN",
+        "FBD90695-GRN",
+        "FBD90695-GRN-BN",
+        "FBD90694-GRN-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9959139227867126,
+        0.9959138035774231
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90698-GRN-BS.jpg",
+      "ground_truth": "FBD90698-GRN-BS",
+      "predicted_top1": "FBD90697-GRN-BS",
+      "predicted_topk": [
+        "FBD90697-GRN-BS",
+        "FBD90698-GRN-BS",
+        "FBD90699-GRN-BS",
+        "FBD90697-GRN-BN",
+        "FBD90697-GRN-AB"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9997965693473816,
+        0.9986349940299988
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90693-KSN-BS.jpg",
+      "ground_truth": "FBD90693-KSN-BS",
+      "predicted_top1": "FBD90693-KSN-BS",
+      "predicted_topk": [
+        "FBD90693-KSN-BS",
+        "FBD90691-KSN-BS",
+        "FBD90692-KSN-BS",
+        "FBD90692-WTE-BS",
+        "FBD90693-WTE-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9994589686393738,
+        0.9994589686393738
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90508-CHI-BS.jpg",
+      "ground_truth": "FBD90508-CHI-BS",
+      "predicted_top1": "FBD90511-GUN-BS",
+      "predicted_topk": [
+        "FBD90511-GUN-BS",
+        "FBD90508-CHI-BS",
+        "FBD90504-CHI-BS",
+        "FBD90508-GUN-BS",
+        "FBD90511-CHI-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "DOB16405-IVY.jpg",
+      "ground_truth": "DOB16405-IVY",
+      "predicted_top1": "DOB16405-IVY",
+      "predicted_topk": [
+        "DOB16405-IVY",
+        "DOB16405-BLK",
+        "DJE00084-SAP",
+        "DDG16406-BLK",
+        "DOB00033-WTE"
+      ],
+      "similarities": [
+        1.0,
+        0.886929452419281,
+        0.7326907515525818,
+        0.7071877121925354,
+        0.6898266673088074
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FAR01922-CHI.jpg",
+      "ground_truth": "FAR01922-CHI",
+      "predicted_top1": "FAR01922-CHI",
+      "predicted_topk": [
+        "FAR01922-CHI",
+        "FAR03930-GUN",
+        "FAR02204-IDG",
+        "FAR01535-BLK",
+        "FAR06335-BSP"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        0.970655620098114,
+        0.9690529704093933,
+        0.9544987082481384
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "DVA00082-GRY.jpg",
+      "ground_truth": "DVA00082-GRY",
+      "predicted_top1": "DVA00082-GRY",
+      "predicted_topk": [
+        "DVA00082-GRY",
+        "DCA01067-CPN",
+        "DOB00186-CLE",
+        "DVA00045-GOD",
+        "DVA00035-GOD"
+      ],
+      "similarities": [
+        1.0,
+        0.7883188128471375,
+        0.7828460335731506,
+        0.7713289260864258,
+        0.7667874693870544
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90504-OTT.jpg",
+      "ground_truth": "FBD90504-OTT",
+      "predicted_top1": "FBD90504-OTT",
+      "predicted_topk": [
+        "FBD90504-OTT",
+        "FBD90511-OTT",
+        "FBD90508-OTT",
+        "FBD90508-CHA",
+        "FBD90511-CHA"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9951464533805847,
+        0.9951463341712952
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90527-IDG.jpg",
+      "ground_truth": "FBD90527-IDG",
+      "predicted_top1": "FBD90520-IDG",
+      "predicted_topk": [
+        "FBD90520-IDG",
+        "FBD90530-IDG",
+        "FBD90527-IDG",
+        "FBD90526-COB",
+        "FBD90528-COB"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.993756890296936,
+        0.993756890296936
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FAR06723-COB.jpg",
+      "ground_truth": "FAR06723-COB",
+      "predicted_top1": "FAR06723-COB",
+      "predicted_topk": [
+        "FAR06723-COB",
+        "FAR06721-IDG",
+        "FAR03812-PEC",
+        "FAR04853-BLK",
+        "FAR06725-BSP"
+      ],
+      "similarities": [
+        1.0,
+        0.9914006590843201,
+        0.9632238745689392,
+        0.9600386023521423,
+        0.9580207467079163
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90504-OTT-BS.jpg",
+      "ground_truth": "FBD90504-OTT-BS",
+      "predicted_top1": "FBD90504-CHA-BS",
+      "predicted_topk": [
+        "FBD90504-CHA-BS",
+        "FBD90511-OTT-BS",
+        "FBD90504-OTT-BS",
+        "FBD90508-CHA-BS",
+        "FBD90508-OTT-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90696-OTT-AB.jpg",
+      "ground_truth": "FBD90696-OTT-AB",
+      "predicted_top1": "FBD90695-SLA-AB",
+      "predicted_topk": [
+        "FBD90695-SLA-AB",
+        "FBD90695-ASH-AB",
+        "FBD90694-OTT-AB",
+        "FBD90695-CHA-AB",
+        "FBD90696-ASH-AB"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": null,
+      "top1_correct": false,
+      "topk_correct": false,
+      "status": "success"
+    },
+    {
+      "image_name": "FAR08844-PEL.jpg",
+      "ground_truth": "FAR08844-PEL",
+      "predicted_top1": "FAR01532-ALP",
+      "predicted_topk": [
+        "FAR01532-ALP",
+        "FAR08844-PEL",
+        "FAR04554-OYS",
+        "FAR08853-KSN",
+        "FAR08852-WTE"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        0.9822966456413269,
+        0.9822965264320374,
+        0.9822965264320374
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "DHO00386-WTE.jpg",
+      "ground_truth": "DHO00386-WTE",
+      "predicted_top1": "DHO00386-WTE",
+      "predicted_topk": [
+        "DHO00386-WTE",
+        "DJE00387-WTE",
+        "DVA00197-GOD",
+        "DJE00477-WTE",
+        "DHO00536-WTE"
+      ],
+      "similarities": [
+        1.0,
+        0.731369137763977,
+        0.7197998762130737,
+        0.715698778629303,
+        0.710005521774292
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90532-COB.jpg",
+      "ground_truth": "FBD90532-COB",
+      "predicted_top1": "FBD90532-COB",
+      "predicted_topk": [
+        "FBD90532-COB",
+        "FBD90528-COB",
+        "FBD90526-COB",
+        "FBD90530-IDG",
+        "FBD90520-IDG"
+      ],
+      "similarities": [
+        1.0,
+        0.9997554421424866,
+        0.9997554421424866,
+        0.9934554696083069,
+        0.9934554696083069
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FAR07626-SKY.jpg",
+      "ground_truth": "FAR07626-SKY",
+      "predicted_top1": "FAR07626-SKY",
+      "predicted_topk": [
+        "FAR07626-SKY",
+        "FAR07633-BSP",
+        "FAR07631-PEC",
+        "FAR07629-GRN",
+        "FAR07635-DOV"
+      ],
+      "similarities": [
+        1.0,
+        0.9779710173606873,
+        0.9594979882240295,
+        0.9580144286155701,
+        0.9513794183731079
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90699-CHI.jpg",
+      "ground_truth": "FBD90699-CHI",
+      "predicted_top1": "FBD90697-GUN",
+      "predicted_topk": [
+        "FBD90697-GUN",
+        "FBD90697-CHI",
+        "FBD90698-CHI",
+        "FBD90699-CHI",
+        "FBD90698-GUN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 4,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90607-PEC.jpg",
+      "ground_truth": "FBD90607-PEC",
+      "predicted_top1": "FBD90605-PEC",
+      "predicted_topk": [
+        "FBD90605-PEC",
+        "FBD90607-PEC",
+        "FBD90612-PEC",
+        "FBD90621-PEC",
+        "FBD90615-PEC"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9955310225486755,
+        0.9955310225486755
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90554-ASH.jpg",
+      "ground_truth": "FBD90554-ASH",
+      "predicted_top1": "FBD90547-ASH",
+      "predicted_topk": [
+        "FBD90547-ASH",
+        "FBD90554-ASH",
+        "FBD90547-CHA",
+        "FBD90575-CHA",
+        "FBD90549-OTT"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.9926146268844604
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FAR11658-WTE.jpg",
+      "ground_truth": "FAR11658-WTE",
+      "predicted_top1": "FAR11658-WTE",
+      "predicted_topk": [
+        "FAR11658-WTE",
+        "FAR03505-OYS",
+        "FAR11682-KSN",
+        "FAR11691-OYS",
+        "FAR11681-KSN"
+      ],
+      "similarities": [
+        1.0,
+        0.9992913007736206,
+        0.9992913007736206,
+        0.9785997271537781,
+        0.9785997271537781
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90692-OYS-BS.jpg",
+      "ground_truth": "FBD90692-OYS-BS",
+      "predicted_top1": "FBD90693-OYS-BS",
+      "predicted_topk": [
+        "FBD90693-OYS-BS",
+        "FBD90691-OYS-BS",
+        "FBD90692-OYS-BS",
+        "FBD90691-WTE-BS",
+        "FBD90692-WTE-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9990718364715576,
+        0.9990718364715576
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90699-SLV-AB.jpg",
+      "ground_truth": "FBD90699-SLV-AB",
+      "predicted_top1": "FBD90698-SLV-AB",
+      "predicted_topk": [
+        "FBD90698-SLV-AB",
+        "FBD90699-SLV-AB",
+        "FBD90697-SLV-AB",
+        "FBD90697-SLV-BN",
+        "FBD90697-SLV-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.999290943145752,
+        0.9990347623825073
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90608-BON.jpg",
+      "ground_truth": "FBD90608-BON",
+      "predicted_top1": "FBD90607-BON",
+      "predicted_topk": [
+        "FBD90607-BON",
+        "FBD90608-BON",
+        "FBD90225-BON-01",
+        "FBD90316-CCA",
+        "FBD90332-CCA"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90695-SKY-BN.jpg",
+      "ground_truth": "FBD90695-SKY-BN",
+      "predicted_top1": "FBD90694-SKY-BN",
+      "predicted_topk": [
+        "FBD90694-SKY-BN",
+        "FBD90695-SKY-BN",
+        "FBD90696-SKY-BN",
+        "FBD90694-SKY-BS",
+        "FBD90695-SKY-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.999402642250061,
+        0.999402642250061
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "DPH00316-SLV.jpg",
+      "ground_truth": "DPH00316-SLV",
+      "predicted_top1": "DPH00316-SLV",
+      "predicted_topk": [
+        "DPH00316-SLV",
+        "DPH01093-GOD",
+        "DPH00531-SLV",
+        "DPH04868-WTE",
+        "DPH04926-SLV"
+      ],
+      "similarities": [
+        1.0,
+        0.7228507399559021,
+        0.7074826955795288,
+        0.6981614232063293,
+        0.6968454718589783
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FAR12031-ASH.jpg",
+      "ground_truth": "FAR12031-ASH",
+      "predicted_top1": "FAR12031-ASH",
+      "predicted_topk": [
+        "FAR12031-ASH",
+        "FAR12015-CHA",
+        "FAR12016-CHA",
+        "FAR12032-ASH",
+        "FAR15098-OTT"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        0.9979017972946167,
+        0.9979017972946167,
+        0.9956896901130676
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90691-BON-BN.jpg",
+      "ground_truth": "FBD90691-BON-BN",
+      "predicted_top1": "FBD90692-BON-BN",
+      "predicted_topk": [
+        "FBD90692-BON-BN",
+        "FBD90693-CCA-BN",
+        "FBD90692-CCA-BN",
+        "FBD90693-BON-BN",
+        "FBD90691-CCA-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": null,
+      "top1_correct": false,
+      "topk_correct": false,
+      "status": "success"
+    },
+    {
+      "image_name": "DJE00149-WTE.jpg",
+      "ground_truth": "DJE00149-WTE",
+      "predicted_top1": "DJE00149-WTE",
+      "predicted_topk": [
+        "DJE00149-WTE",
+        "DJE00070-WTE",
+        "DJE00073-WTE",
+        "DJE00135-WTE",
+        "DJE00387-WTE"
+      ],
+      "similarities": [
+        1.0,
+        0.7716135382652283,
+        0.7685641050338745,
+        0.7505553364753723,
+        0.7385118007659912
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90551-KSN.jpg",
+      "ground_truth": "FBD90551-KSN",
+      "predicted_top1": "FBD90559-OYS",
+      "predicted_topk": [
+        "FBD90559-OYS",
+        "FBD90551-KSN",
+        "FBD90556-OYS",
+        "FBD90556-KSN",
+        "FBD90559-KSN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90696-BLK-GN.jpg",
+      "ground_truth": "FBD90696-BLK-GN",
+      "predicted_top1": "FBD90696-BLK-GN",
+      "predicted_topk": [
+        "FBD90696-BLK-GN",
+        "FBD90694-BLK-GN",
+        "FBD90695-BLK-GN",
+        "FBD90694-BLK-BS",
+        "FBD90696-BLK-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9922507405281067,
+        0.9922507405281067
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90711-GRY.jpg",
+      "ground_truth": "FBD90711-GRY",
+      "predicted_top1": "FBD90711-GRY",
+      "predicted_topk": [
+        "FBD90711-GRY",
+        "FBD90239-GRY-01",
+        "FBD90712-GRY",
+        "FBD90353-DOV",
+        "FBD90709-DOV"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9797303676605225,
+        0.9797302484512329
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90511-OTT.jpg",
+      "ground_truth": "FBD90511-OTT",
+      "predicted_top1": "FBD90504-OTT",
+      "predicted_topk": [
+        "FBD90504-OTT",
+        "FBD90511-OTT",
+        "FBD90508-OTT",
+        "FBD90508-CHA",
+        "FBD90511-CHA"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9951464533805847,
+        0.9951463341712952
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FAR12023-OYS.jpg",
+      "ground_truth": "FAR12023-OYS",
+      "predicted_top1": "FAR12011-KSN",
+      "predicted_topk": [
+        "FAR12011-KSN",
+        "FAR12023-OYS",
+        "FAR12024-OYS",
+        "FAR12012-KSN",
+        "FAR15108-WTE"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        0.9991076588630676,
+        0.9991076588630676,
+        0.9971396923065186
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90699-OYS-BS.jpg",
+      "ground_truth": "FBD90699-OYS-BS",
+      "predicted_top1": "FBD90698-OYS-BS",
+      "predicted_topk": [
+        "FBD90698-OYS-BS",
+        "FBD90699-OYS-BS",
+        "FBD90697-OYS-BS",
+        "FBD90697-OYS-BN",
+        "FBD90697-OYS-AB"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9999308586120605,
+        0.9994930028915405
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90576-CHA.jpg",
+      "ground_truth": "FBD90576-CHA",
+      "predicted_top1": "FBD90576-CHA",
+      "predicted_topk": [
+        "FBD90576-CHA",
+        "FBD90578-CHA",
+        "FBD90583-CHA",
+        "FBD90578-CHA-BN",
+        "FBD90583-CHA-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9984787106513977,
+        0.9984787106513977
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FAR07638-KSN.jpg",
+      "ground_truth": "FAR07638-KSN",
+      "predicted_top1": "FAR01532-WTE",
+      "predicted_topk": [
+        "FAR01532-WTE",
+        "FAR07638-KSN",
+        "FAR07641-OYS",
+        "FAR07637-BON",
+        "FAR07634-CCA"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9884737133979797,
+        0.9884737133979797
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90697-SLV-AB.jpg",
+      "ground_truth": "FBD90697-SLV-AB",
+      "predicted_top1": "FBD90698-SLV-AB",
+      "predicted_topk": [
+        "FBD90698-SLV-AB",
+        "FBD90699-SLV-AB",
+        "FBD90697-SLV-AB",
+        "FBD90697-SLV-BN",
+        "FBD90697-SLV-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.999290943145752,
+        0.9990347623825073
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90229-SKY-01.jpg",
+      "ground_truth": "FBD90229-SKY-01",
+      "predicted_top1": "FBD90229-SKY-01",
+      "predicted_topk": [
+        "FBD90229-SKY-01",
+        "FBD90743-SKY-BN",
+        "FBD90743-SKY-AB",
+        "FBD90743-SKY",
+        "FBD90743-SKY-GD"
+      ],
+      "similarities": [
+        1.0,
+        0.9998419284820557,
+        0.9984863996505737,
+        0.998190701007843,
+        0.9936752915382385
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90743-BON-BN.jpg",
+      "ground_truth": "FBD90743-BON-BN",
+      "predicted_top1": "FBD90743-BON-BN",
+      "predicted_topk": [
+        "FBD90743-BON-BN",
+        "FBD90744-BON-BN",
+        "FBD90743-BON-BS",
+        "FBD90744-BON-BS",
+        "FBD90743-BON-AB"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        0.9998522996902466,
+        0.9998522996902466,
+        0.9976807832717896
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90526-COB.jpg",
+      "ground_truth": "FBD90526-COB",
+      "predicted_top1": "FBD90528-COB",
+      "predicted_topk": [
+        "FBD90528-COB",
+        "FBD90526-COB",
+        "FBD90532-COB",
+        "FBD90530-IDG",
+        "FBD90520-IDG"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        0.9997554421424866,
+        0.993756890296936,
+        0.993756890296936
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90625-GRY-BS.jpg",
+      "ground_truth": "FBD90625-GRY-BS",
+      "predicted_top1": "FBD90625-GRY-BS",
+      "predicted_topk": [
+        "FBD90625-GRY-BS",
+        "FBD90505-GRY-BS",
+        "FBD90507-GRY-BS",
+        "FBD90209-GRY-01",
+        "FBD90505-GRY-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9995044469833374,
+        0.9995044469833374
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FAT04876-BLK.jpg",
+      "ground_truth": "FAT04876-BLK",
+      "predicted_top1": "FAT04876-BLK",
+      "predicted_topk": [
+        "FAT04876-BLK",
+        "FAT16210-BRA",
+        "FAT00449-GOD",
+        "FAT16211-BRA",
+        "FAT03788-CNA"
+      ],
+      "similarities": [
+        1.0,
+        0.8831735849380493,
+        0.803045928478241,
+        0.8003928661346436,
+        0.7893616557121277
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "DCA05537-SLV.jpg",
+      "ground_truth": "DCA05537-SLV",
+      "predicted_top1": "DCA05537-SLV",
+      "predicted_topk": [
+        "DCA05537-SLV",
+        "DCA05542-SLV",
+        "DCA05541-BLK",
+        "DCA00708-SLV",
+        "DCA05538-GOD"
+      ],
+      "similarities": [
+        1.0,
+        0.9468005895614624,
+        0.9174053072929382,
+        0.8977962732315063,
+        0.8490281701087952
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "DJE16429-SLV.jpg",
+      "ground_truth": "DJE16429-SLV",
+      "predicted_top1": "DJE16429-SLV",
+      "predicted_topk": [
+        "DJE16429-SLV",
+        "DJE05540-SLV",
+        "DJE05539-SLV",
+        "DVA00082-GRY",
+        "DOB00087-GOD"
+      ],
+      "similarities": [
+        1.0,
+        0.7247087359428406,
+        0.7247087359428406,
+        0.7012310028076172,
+        0.6836581826210022
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90699-CHI-AB.jpg",
+      "ground_truth": "FBD90699-CHI-AB",
+      "predicted_top1": "FBD90698-CHI-AB",
+      "predicted_topk": [
+        "FBD90698-CHI-AB",
+        "FBD90697-CHI-AB",
+        "FBD90697-GUN-AB",
+        "FBD90699-GUN-AB",
+        "FBD90698-GUN-AB"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": null,
+      "top1_correct": false,
+      "topk_correct": false,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90588-BLK.jpg",
+      "ground_truth": "FBD90588-BLK",
+      "predicted_top1": "FBD90585-BLK",
+      "predicted_topk": [
+        "FBD90585-BLK",
+        "FBD90588-BLK",
+        "FBD90589-BLK",
+        "FBD90593-ONY",
+        "FBD90338-ONY"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9968736171722412,
+        0.9968736171722412
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90692-CCA-GN.jpg",
+      "ground_truth": "FBD90692-CCA-GN",
+      "predicted_top1": "FBD90693-BON-GN",
+      "predicted_topk": [
+        "FBD90693-BON-GN",
+        "FBD90691-BON-GN",
+        "FBD90691-CCA-GN",
+        "FBD90692-BON-GN",
+        "FBD90692-CCA-GN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 5,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90699-ASH-BS.jpg",
+      "ground_truth": "FBD90699-ASH-BS",
+      "predicted_top1": "FBD90698-ASH-BS",
+      "predicted_topk": [
+        "FBD90698-ASH-BS",
+        "FBD90698-SLA-BS",
+        "FBD90699-ASH-BS",
+        "FBD90697-CHA-BS",
+        "FBD90697-SLA-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90744-KSN-AB.jpg",
+      "ground_truth": "FBD90744-KSN-AB",
+      "predicted_top1": "FBD90744-KSN-AB",
+      "predicted_topk": [
+        "FBD90744-KSN-AB",
+        "FBD90743-KSN-AB",
+        "FBD90252-KSN",
+        "FBD90743-KSN-BS",
+        "FBD90743-KSN-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        0.9969632029533386,
+        0.9969632029533386,
+        0.9969186782836914
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90651-ASH.jpg",
+      "ground_truth": "FBD90651-ASH",
+      "predicted_top1": "FBD90550-CHA",
+      "predicted_topk": [
+        "FBD90550-CHA",
+        "FBD90550-ASH",
+        "FBD90669-CHA",
+        "FBD90654-ASH",
+        "FBD90654-CHA"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": null,
+      "top1_correct": false,
+      "topk_correct": false,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90346-DOV.jpg",
+      "ground_truth": "FBD90346-DOV",
+      "predicted_top1": "FBD90346-DOV",
+      "predicted_topk": [
+        "FBD90346-DOV",
+        "FBD90234-GRY-01",
+        "FBD90261-GRY",
+        "FBD90232-PEL-01",
+        "FBD90386-PEL"
+      ],
+      "similarities": [
+        1.0,
+        0.997865617275238,
+        0.997865617275238,
+        0.982150673866272,
+        0.9821505546569824
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90573-DOV.jpg",
+      "ground_truth": "FBD90573-DOV",
+      "predicted_top1": "FBD90572-DOV",
+      "predicted_topk": [
+        "FBD90572-DOV",
+        "FBD90574-DOV",
+        "FBD90573-DOV",
+        "FBD90574-DOV-BS",
+        "FBD90572-DOV-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9989508390426636,
+        0.9989508390426636
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90675-SKY.jpg",
+      "ground_truth": "FBD90675-SKY",
+      "predicted_top1": "FBD90675-SKY",
+      "predicted_topk": [
+        "FBD90675-SKY",
+        "FBD90661-SKY",
+        "FBD90661-PEC",
+        "FBD90661-BSP",
+        "FBD90675-BSP"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        0.9798532724380493,
+        0.9737789630889893,
+        0.9737789630889893
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90343-CNA.jpg",
+      "ground_truth": "FBD90343-CNA",
+      "predicted_top1": "FBD90564-MOO-BS",
+      "predicted_topk": [
+        "FBD90564-MOO-BS",
+        "FBD90343-CNA",
+        "FBD90563-MOO-BS",
+        "FBD90411-GRY",
+        "FBD90481-MOO"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.891944408416748,
+        0.8565208315849304
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "DVA00060-GOD.jpg",
+      "ground_truth": "DVA00060-GOD",
+      "predicted_top1": "DVA00060-GOD",
+      "predicted_topk": [
+        "DVA00060-GOD",
+        "DVA00063-SLV",
+        "DCA01067-CPN",
+        "DCA00291-GOD",
+        "DVA00550-BLK"
+      ],
+      "similarities": [
+        1.0,
+        0.8252830505371094,
+        0.7414324283599854,
+        0.7397285103797913,
+        0.7325477600097656
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90581-WTE-BN.jpg",
+      "ground_truth": "FBD90581-WTE-BN",
+      "predicted_top1": "FBD90638-WTE-BN",
+      "predicted_topk": [
+        "FBD90638-WTE-BN",
+        "FBD90581-WTE-BN",
+        "FBD90509-WTE-BN",
+        "FBD90509-WTE-BS",
+        "FBD90581-WTE-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9960297346115112,
+        0.9960297346115112
+      ],
+      "rank": 2,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90698-WTE.jpg",
+      "ground_truth": "FBD90698-WTE",
+      "predicted_top1": "FBD90698-WTE",
+      "predicted_topk": [
+        "FBD90698-WTE",
+        "FBD90697-OYS",
+        "FBD90699-OYS",
+        "FBD90698-OYS",
+        "FBD90697-KSN"
+      ],
+      "similarities": [
+        1.0,
+        0.9986823201179504,
+        0.9986823201179504,
+        0.9986823201179504,
+        0.9985320568084717
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90667-PEL.jpg",
+      "ground_truth": "FBD90667-PEL",
+      "predicted_top1": "FBD90660-PEL",
+      "predicted_topk": [
+        "FBD90660-PEL",
+        "FBD90575-PEL",
+        "FBD90667-PEL",
+        "FBD90653-ALP",
+        "FBD90579-ALP"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9968224763870239,
+        0.9968224763870239
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90699-CHI-GN.jpg",
+      "ground_truth": "FBD90699-CHI-GN",
+      "predicted_top1": "FBD90699-CHI-GN",
+      "predicted_topk": [
+        "FBD90699-CHI-GN",
+        "FBD90697-GUN-GN",
+        "FBD90697-CHI-GN",
+        "FBD90698-GUN-GN",
+        "FBD90698-CHI-GN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "DJE00546-SLV.jpg",
+      "ground_truth": "DJE00546-SLV",
+      "predicted_top1": "DJE00546-SLV",
+      "predicted_topk": [
+        "DJE00546-SLV",
+        "DJE00558-SLV",
+        "DJE00558-GOD",
+        "DJE00546-GOD",
+        "DVA00063-SLV"
+      ],
+      "similarities": [
+        1.0,
+        0.8869902491569519,
+        0.8149115443229675,
+        0.8149113655090332,
+        0.7358388304710388
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90693-GUN-BN.jpg",
+      "ground_truth": "FBD90693-GUN-BN",
+      "predicted_top1": "FBD90692-GUN-BN",
+      "predicted_topk": [
+        "FBD90692-GUN-BN",
+        "FBD90693-CHI-BN",
+        "FBD90691-CHI-BN",
+        "FBD90692-CHI-BN",
+        "FBD90693-GUN-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 5,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90694-ASH.jpg",
+      "ground_truth": "FBD90694-ASH",
+      "predicted_top1": "FBD90696-ASH",
+      "predicted_topk": [
+        "FBD90696-ASH",
+        "FBD90695-CHA",
+        "FBD90694-ASH",
+        "FBD90695-ASH",
+        "FBD90696-OTT"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90698-COB-AB.jpg",
+      "ground_truth": "FBD90698-COB-AB",
+      "predicted_top1": "FBD90698-COB-AB",
+      "predicted_topk": [
+        "FBD90698-COB-AB",
+        "FBD90699-COB-AB",
+        "FBD90697-COB-AB",
+        "FBD90697-COB-BN",
+        "FBD90698-COB-BS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9996551275253296,
+        0.999342143535614
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90732-CHA.jpg",
+      "ground_truth": "FBD90732-CHA",
+      "predicted_top1": "FBD90732-CHA",
+      "predicted_topk": [
+        "FBD90732-CHA",
+        "FBD90734-CHA",
+        "FBD90732-ASH",
+        "FBD90734-ASH",
+        "FBD90735-OTT"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.999702513217926
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90732-IDG.jpg",
+      "ground_truth": "FBD90732-IDG",
+      "predicted_top1": "FBD90732-IDG",
+      "predicted_topk": [
+        "FBD90732-IDG",
+        "FBD90734-IDG",
+        "FBD90736-IDG",
+        "FBD90736-COB",
+        "FBD90732-COB"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.983662486076355,
+        0.982837438583374
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90621-GRN.jpg",
+      "ground_truth": "FBD90621-GRN",
+      "predicted_top1": "FBD90616-GRN",
+      "predicted_topk": [
+        "FBD90616-GRN",
+        "FBD90615-GRN",
+        "FBD90621-GRN",
+        "FBD90607-GRN",
+        "FBD90612-GRN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9984217882156372,
+        0.9984217882156372
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90696-BLK-BN.jpg",
+      "ground_truth": "FBD90696-BLK-BN",
+      "predicted_top1": "FBD90694-BLK-BN",
+      "predicted_topk": [
+        "FBD90694-BLK-BN",
+        "FBD90695-BLK-BN",
+        "FBD90696-BLK-BN",
+        "FBD90695-CHI-BN",
+        "FBD90696-GUN-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        0.9679319262504578,
+        0.9679319262504578
+      ],
+      "rank": 3,
+      "top1_correct": false,
+      "topk_correct": true,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90505-BON-BN.jpg",
+      "ground_truth": "FBD90505-BON-BN",
+      "predicted_top1": "FBD90510-BON-BN",
+      "predicted_topk": [
+        "FBD90510-BON-BN",
+        "FBD90507-CCA-BN",
+        "FBD90510-CCA-BN",
+        "FBD90505-CCA-BN",
+        "FBD90507-BON-BN"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": null,
+      "top1_correct": false,
+      "topk_correct": false,
+      "status": "success"
+    },
+    {
+      "image_name": "FBD90520-KSN.jpg",
+      "ground_truth": "FBD90520-KSN",
+      "predicted_top1": "FBD90520-KSN",
+      "predicted_topk": [
+        "FBD90520-KSN",
+        "FBD90530-KSN",
+        "FBD90384-SNW",
+        "FBD90520-OYS",
+        "FBD90527-OYS"
+      ],
+      "similarities": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rank": 1,
+      "top1_correct": true,
+      "topk_correct": true,
+      "status": "success"
+    }
+  ],
+  "similarity_scores": {
+    "correct": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "incorrect_top1": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "metrics": {
+    "top1_accuracy": 50.0,
+    "topk_accuracy": 94.0,
+    "mean_reciprocal_rank": 0.676,
+    "top1_correct_count": 50,
+    "topk_correct_count": 94
+  }
+}

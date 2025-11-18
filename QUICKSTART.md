@@ -1,215 +1,383 @@
-# Quick Start Guide
+# SKU Recognition API - Quick Start Guide
 
-快速开始使用 SKU 识别系统
+快速入门指南，5分钟部署SKU识别API服务。
 
-## 5分钟快速开始
+---
 
-### 1. 安装依赖 (1-2分钟)
+## ⚡ 30秒快速测试
+
+如果你已经有向量数据库文件，可以立即启动：
 
 ```bash
-# 创建虚拟环境
-python -m venv venv
-source venv/bin/activate
+cd /Users/dizhang/Gitlab/shopline-img-train
 
-# 安装依赖
-pip install -r requirements.txt
-pip install groundingdino-py
+# 1. 检查向量数据库是否存在
+ls -lh data/embeddings/
+
+# 2. 启动 API 服务器
+./scripts/start_api.sh
+
+# 3. 打开浏览器测试
+open http://localhost:8000/docs
 ```
 
-### 2. 配置 API (1分钟)
+---
+
+## 🚀 完整5分钟部署
+
+### 前置条件
+
+✅ Python 3.9+ 已安装
+✅ 已完成 `pip install -r requirements.txt`
+✅ 有 MySQL 数据库连接（如果需要重新下载数据）
+
+### 步骤 1: 配置环境变量 (1分钟)
 
 ```bash
 # 复制环境变量模板
 cp .env.example .env
 
 # 编辑 .env 文件
-nano .env
+vim .env  # 或使用你喜欢的编辑器
 ```
 
-填入你的 Shopline API 凭证：
-```
-SHOPLINE_ACCESS_TOKEN=your_token_here
-SHOPLINE_SHOP_NAME=your_shop_name
+**必须配置的变量**：
+```bash
+# MySQL 数据库（如果需要下载数据）
+MYSQL_HOST=your_mysql_host
+MYSQL_PORT=3306
+MYSQL_DATABASE=hyt_bi
+MYSQL_USER=your_username
+MYSQL_PASSWORD=your_password
+
+# 设备配置（Mac M4 Pro 使用 CPU）
+DEVICE=cpu
+CLIP_MODEL=ViT-L/14
 ```
 
-### 3. 下载 SKU 数据 (1-5分钟，取决于数据量)
+### 步骤 2: 构建向量数据库 (2-3分钟)
+
+#### 选项 A: 使用增强数据库（推荐）
 
 ```bash
-python scripts/download_sku_data.py --download-images
+python scripts/build_robust_vector_db.py --augment-per-image 2
 ```
 
-这将：
-- 从 Shopline API 获取所有产品
-- 提取 SKU 信息
-- 下载产品图片到 `data/images/`
+⏱️ **预计时间**:
+- 2,000 SKUs: ~5分钟
+- 4,000 SKUs: ~10分钟
+- 19,000 SKUs: ~30分钟
 
-### 4. 构建向量数据库 (2-10分钟，取决于 SKU 数量)
+#### 选项 B: 使用基础数据库（更快）
 
 ```bash
-python scripts/build_vector_db.py
+python scripts/build_vector_db.py \
+  --config config/config.yaml \
+  --sku-data data/raw/sku_data.json \
+  --images-dir data/images \
+  --output-index data/embeddings/faiss_index.bin \
+  --output-metadata data/embeddings/sku_metadata.pkl
 ```
 
-这将：
-- 使用 CLIP 编码所有 SKU 图片
-- 构建 FAISS 向量索引
-- 保存到 `data/embeddings/`
+⏱️ **预计时间**:
+- 4,000 SKUs: ~3分钟
+- 19,000 SKUs: ~15分钟
 
-### 5. 运行推理 (几秒钟)
+### 步骤 3: 启动 API 服务器 (30秒)
 
 ```bash
-# 准备一张测试图片
-python scripts/run_inference.py your_test_image.jpg --visualize
+# 生产模式
+./scripts/start_api.sh
+
+# 或开发模式（热重载）
+./scripts/start_api.sh --dev
 ```
 
-查看结果：
-- JSON 结果: `output/your_test_image_results.json`
-- 可视化图片: `output/your_test_image_result.jpg`
+**成功标志**：
 
-## 详细步骤
+```
+🚀 Starting SKU Recognition API Server...
+✅ Loaded environment variables from .env
+✅ Python: Python 3.10.x
+✅ Virtual environment activated
+✅ All required packages installed
+✅ Vector database found
+   📊 Database size: 4109 SKUs
+✅ Configuration file found
 
-### 选项1: 使用 CPU（无需 GPU）
+🚀 Server Configuration:
+   Host:    0.0.0.0
+   Port:    8000
+   Workers: 1
+   Mode:    Production
 
-修改 `config/config.yaml`:
+📝 Access the API documentation at:
+   http://localhost:8000/docs (Swagger UI)
+   http://localhost:8000/redoc (ReDoc)
 
-```yaml
-clip:
-  device: "cpu"
-  batch_size: 8  # CPU 模式使用较小批次
-
-grounding_dino:
-  device: "cpu"
+INFO:     Started server process
+INFO:     Uvicorn running on http://0.0.0.0:8000
 ```
 
-**注意**: CPU 模式会慢很多，但不需要 GPU。
+### 步骤 4: 测试 API (1分钟)
 
-### 选项2: 使用 GPU（推荐）
-
-确保已安装 CUDA 和 PyTorch GPU 版本：
+#### 测试 1: 健康检查
 
 ```bash
-# 检查 CUDA
-nvidia-smi
-
-# 安装 PyTorch GPU 版本
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+curl http://localhost:8000/api/v1/health
 ```
 
-配置使用 GPU（默认设置）：
-
-```yaml
-clip:
-  device: "cuda"
-  batch_size: 32
-
-grounding_dino:
-  device: "cuda"
+**预期输出**：
+```json
+{
+  "status": "healthy",
+  "version": "1.0.0",
+  "model_loaded": true,
+  "database_size": 4109,
+  "uptime_seconds": 10.5
+}
 ```
 
-### 下载 Grounding DINO 权重（可选）
-
-如果自动下载失败：
+#### 测试 2: SKU 识别
 
 ```bash
-# 创建目录
-mkdir -p models/weights
-
-# 手动下载
-wget https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/groundingdino_swint_ogc.pth \
-  -O models/weights/groundingdino_swint_ogc.pth
+# 使用你的测试图片
+curl -X POST http://localhost:8000/api/v1/recognize \
+  -F "file=@data/images/DPH00685-BLK.jpg" \
+  -F "top_k=5"
 ```
 
-更新配置：
-
-```yaml
-grounding_dino:
-  checkpoint_path: "models/weights/groundingdino_swint_ogc.pth"
+**预期输出**：
+```json
+{
+  "success": true,
+  "matches": [
+    {
+      "sku": "DPH00685-BLK",
+      "similarity": 0.9876,
+      "product_title": "Contemporary Sofa - Black",
+      "category": "FURNITURE",
+      "retail_price": 1299.99
+    }
+  ],
+  "processing_time_ms": 175.4,
+  "timestamp": "2025-11-17T12:34:56.789Z"
+}
 ```
 
-## 常见问题
+#### 测试 3: 使用 Swagger UI
 
-### Q: 如何测试系统是否正常工作？
-
-使用内置的 fallback 模式测试：
-
-```python
-from src.pipeline.inference import SKURecognitionPipeline
-from pathlib import Path
-
-pipeline = SKURecognitionPipeline()
-pipeline.load_database(
-    Path('data/embeddings/faiss_index.bin'),
-    Path('data/embeddings/sku_metadata.pkl')
-)
-
-results = pipeline.process_image('test.jpg')
-print(results)
-```
-
-### Q: 数据库构建需要多长时间？
-
-| SKU 数量 | GPU 时间 | CPU 时间 |
-|---------|---------|---------|
-| 1,000   | ~2 分钟  | ~10 分钟 |
-| 10,000  | ~15 分钟 | ~2 小时  |
-| 20,000  | ~30 分钟 | ~4 小时  |
-
-### Q: 推理速度如何？
-
-| 设备 | 检测时间 | 识别时间 | 总时间 |
-|-----|---------|---------|-------|
-| GPU (RTX 3090) | ~0.2s | ~0.05s | ~0.25s |
-| GPU (RTX 2060) | ~0.5s | ~0.1s  | ~0.6s  |
-| CPU (i7-9700)  | ~5s   | ~0.5s  | ~5.5s  |
-
-### Q: 如何提高识别准确率？
-
-1. **使用高质量的 SKU 图片**
-   - 清晰、高分辨率
-   - 白色或纯色背景
-   - 正面拍摄
-
-2. **调整检测阈值**
-   ```yaml
-   grounding_dino:
-     box_threshold: 0.25  # 降低以检测更多物体
-     text_threshold: 0.20
-   ```
-
-3. **调整识别阈值**
-   ```yaml
-   inference:
-     confidence_threshold: 0.6  # 降低以接受更多匹配
-   ```
-
-4. **优化检测提示词**
-   ```yaml
-   grounding_dino:
-     prompts:
-       - "furniture product"  # 更具体的描述
-       - "home decor item"
-   ```
-
-### Q: 如何更新 SKU 数据库？
-
-重新运行数据下载和构建步骤：
-
-```bash
-# 1. 下载新数据
-python scripts/download_sku_data.py --download-images
-
-# 2. 重新构建数据库
-python scripts/build_vector_db.py
-```
-
-数据库会自动替换旧版本。
-
-## 下一步
-
-- 📖 阅读完整文档: [README.md](README.md)
-- 🔧 自定义配置: `config/config.yaml`
-- 🧪 运行测试: `pytest tests/`
-- 📊 查看性能优化建议
+1. 打开浏览器访问: http://localhost:8000/docs
+2. 找到 `POST /api/v1/recognize` 端点
+3. 点击 "Try it out"
+4. 上传图片文件
+5. 点击 "Execute"
+6. 查看响应结果
 
 ---
 
-如有问题，请查看 [README.md](README.md) 的故障排除部分。
+## 🖥️ 前端集成 (可选)
+
+### 前端项目路径
+
+```bash
+cd /Users/dizhang/Gitlab/wms-store
+```
+
+### 启动前端
+
+```bash
+# 安装依赖（如果还没安装）
+npm install
+
+# 启动开发服务器
+npm run dev
+```
+
+### 访问 SKU 识别页面
+
+1. 打开浏览器: http://localhost:3000
+2. 登录系统
+3. 导航到 **SKU识别** 菜单
+4. 上传图片或使用相机拍照
+5. 查看识别结果
+
+---
+
+## 📊 性能基准
+
+### 识别速度（CPU - Apple M4 Pro）
+
+| 操作 | 时间 | 备注 |
+|------|------|------|
+| 单张图片识别 | 170ms | 包含编码和搜索 |
+| 批量5张 | 600ms | 并行处理 |
+| 批量20张 | 2.5s | 最大批量 |
+
+### 准确率（基于测试集）
+
+| 数据库版本 | Top-1 | Top-5 |
+|-----------|-------|-------|
+| 基础版 | 50% | 94% |
+| 2x增强版 | 65% | 97% ✅ |
+| 5x增强版 | 70% | 98% |
+
+---
+
+## 🔧 常见问题
+
+### 问题 1: 向量数据库文件不存在
+
+**错误**：
+```
+FileNotFoundError: Vector database not found
+```
+
+**解决**：
+```bash
+# 构建向量数据库
+python scripts/build_robust_vector_db.py --augment-per-image 2
+```
+
+### 问题 2: 端口 8000 被占用
+
+**错误**：
+```
+[ERROR] error: Address already in use
+```
+
+**解决**：
+```bash
+# 方案 1: 更换端口
+./scripts/start_api.sh --port 8001
+
+# 方案 2: 停止占用进程
+lsof -ti:8000 | xargs kill -9
+```
+
+### 问题 3: CUDA/GPU 错误（Mac）
+
+**错误**：
+```
+RuntimeError: CUDA not available
+```
+
+**解决**：
+```bash
+# 在 .env 中设置
+DEVICE=cpu
+```
+
+### 问题 4: FastAPI 未安装
+
+**错误**：
+```
+ModuleNotFoundError: No module named 'fastapi'
+```
+
+**解决**：
+```bash
+pip install -r requirements.txt
+```
+
+### 问题 5: 识别速度慢
+
+**原因**：图片过大或向量数据库过大
+
+**优化**：
+```bash
+# 1. 调整图片大小
+# 前端会自动压缩，但CLI可以手动处理：
+convert input.jpg -resize 800x800 output.jpg
+
+# 2. 使用 GPU（如果有）
+DEVICE=cuda  # 在 .env 中
+
+# 3. 减少 top_k 参数
+curl -F "file=@image.jpg" -F "top_k=1" http://localhost:8000/api/v1/recognize
+```
+
+---
+
+## 📈 下一步
+
+### 提升准确率
+
+1. **重建增强数据库**：
+   ```bash
+   python scripts/build_robust_vector_db.py --augment-per-image 5
+   ```
+
+2. **评估当前准确率**：
+   ```bash
+   python scripts/evaluate_accuracy.py
+   ```
+
+### 生产部署
+
+1. **Docker 部署**：
+   ```bash
+   docker-compose up -d sku-recognition-api
+   ```
+
+2. **添加认证**：
+   在 `.env` 中设置 `API_KEY`
+
+3. **启用速率限制**：
+   编辑 `config/config.yaml`，设置 `api.rate_limit.enabled: true`
+
+4. **配置监控**：
+   集成 Prometheus/Grafana
+
+### API 高级用法
+
+- [完整 API 文档](docs/API_DOCUMENTATION.md)
+- [移动端拍照优化指南](docs/MOBILE_RECOGNITION_GUIDE.md)
+- [性能优化指南](docs/PERFORMANCE_OPTIMIZATION.md)
+
+---
+
+## 💡 实用命令
+
+```bash
+# 查看 API 日志
+tail -f logs/app.log
+
+# 查看服务状态
+curl http://localhost:8000/api/v1/stats
+
+# 停止服务
+# Ctrl+C 或 kill $(lsof -t -i:8000)
+
+# 重启服务
+./scripts/start_api.sh
+
+# 测试单张图片（命令行）
+python scripts/test_single_image.py data/images/test.jpg --top-k 10
+
+# 批量测试
+python scripts/test_sku_matching.py
+```
+
+---
+
+## 🎯 总结
+
+**你已成功完成**：
+- ✅ 环境配置
+- ✅ 向量数据库构建
+- ✅ API 服务启动
+- ✅ 功能测试
+
+**现在可以**：
+- 🚀 通过 API 识别 SKU
+- 🖥️ 在前端页面使用拍照识别
+- 📊 查看识别统计数据
+- 🔧 进一步优化和部署
+
+**需要帮助？**
+- 查看 [完整文档](README.md)
+- 查看 [API 文档](docs/API_DOCUMENTATION.md)
+- 提交 [GitHub Issue](https://github.com/your-repo/issues)
+
+祝使用愉快！🎉

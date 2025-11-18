@@ -1,0 +1,869 @@
+{
+  "total_tested": 20,
+  "successful": 20,
+  "failed": 0,
+  "top_k": 5,
+  "database_size": 4109,
+  "results": [
+    {
+      "image_name": "FBD90573-CHA.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FBD90574-CHA",
+        "title": "FBD90574-CHA",
+        "category": "FURNITURE",
+        "similarity": 1.0
+      },
+      "all_matches": [
+        {
+          "sku": "FBD90574-CHA",
+          "title": "FBD90574-CHA",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90573-CHA",
+          "title": "FBD90573-CHA",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90572-CHA",
+          "title": "FBD90572-CHA",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90572-CHA-BN",
+          "title": "FBD90572-CHA-BN",
+          "category": "FURNITURE",
+          "similarity": 0.998710036277771
+        },
+        {
+          "sku": "FBD90573-CHA-BN",
+          "title": "FBD90573-CHA-BN",
+          "category": "FURNITURE",
+          "similarity": 0.998710036277771
+        }
+      ]
+    },
+    {
+      "image_name": "FBE10297-BLK.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR06425-OTT",
+        "title": "FAR06425-OTT",
+        "category": "FURNITURE",
+        "similarity": 0.8057140707969666
+      },
+      "all_matches": [
+        {
+          "sku": "FAR06425-OTT",
+          "title": "FAR06425-OTT",
+          "category": "FURNITURE",
+          "similarity": 0.8057140707969666
+        },
+        {
+          "sku": "FAR06440-CHA",
+          "title": "FAR06440-CHA",
+          "category": "FURNITURE",
+          "similarity": 0.804163932800293
+        },
+        {
+          "sku": "FAR06428-ASH",
+          "title": "FAR06428-ASH",
+          "category": "FURNITURE",
+          "similarity": 0.79876708984375
+        },
+        {
+          "sku": "FAR06427-GRY",
+          "title": "FAR06427-GRY",
+          "category": "FURNITURE",
+          "similarity": 0.7979790568351746
+        },
+        {
+          "sku": "FAR06432-DOV",
+          "title": "FAR06432-DOV",
+          "category": "FURNITURE",
+          "similarity": 0.7968021035194397
+        }
+      ]
+    },
+    {
+      "image_name": "FBE10448-GRY.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR06425-OTT",
+        "title": "FAR06425-OTT",
+        "category": "FURNITURE",
+        "similarity": 0.848589301109314
+      },
+      "all_matches": [
+        {
+          "sku": "FAR06425-OTT",
+          "title": "FAR06425-OTT",
+          "category": "FURNITURE",
+          "similarity": 0.848589301109314
+        },
+        {
+          "sku": "FAR06440-CHA",
+          "title": "FAR06440-CHA",
+          "category": "FURNITURE",
+          "similarity": 0.8455734848976135
+        },
+        {
+          "sku": "FAR06427-GRY",
+          "title": "FAR06427-GRY",
+          "category": "FURNITURE",
+          "similarity": 0.8425674438476562
+        },
+        {
+          "sku": "FAR06432-DOV",
+          "title": "FAR06432-DOV",
+          "category": "FURNITURE",
+          "similarity": 0.8393900394439697
+        },
+        {
+          "sku": "FAR06428-ASH",
+          "title": "FAR06428-ASH",
+          "category": "FURNITURE",
+          "similarity": 0.8357129096984863
+        }
+      ]
+    },
+    {
+      "image_name": "FBE10437-GUN.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR06428-ASH",
+        "title": "FAR06428-ASH",
+        "category": "FURNITURE",
+        "similarity": 0.837031364440918
+      },
+      "all_matches": [
+        {
+          "sku": "FAR06428-ASH",
+          "title": "FAR06428-ASH",
+          "category": "FURNITURE",
+          "similarity": 0.837031364440918
+        },
+        {
+          "sku": "FAR06440-CHA",
+          "title": "FAR06440-CHA",
+          "category": "FURNITURE",
+          "similarity": 0.8355502486228943
+        },
+        {
+          "sku": "FAR06425-OTT",
+          "title": "FAR06425-OTT",
+          "category": "FURNITURE",
+          "similarity": 0.8354259729385376
+        },
+        {
+          "sku": "FAR06427-GRY",
+          "title": "FAR06427-GRY",
+          "category": "FURNITURE",
+          "similarity": 0.8293253779411316
+        },
+        {
+          "sku": "FAR06432-DOV",
+          "title": "FAR06432-DOV",
+          "category": "FURNITURE",
+          "similarity": 0.8268136382102966
+        }
+      ]
+    },
+    {
+      "image_name": "FCH14483-BLK.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR05228-CHI",
+        "title": "FAR05228-CHI",
+        "category": "FURNITURE",
+        "similarity": 0.8744759559631348
+      },
+      "all_matches": [
+        {
+          "sku": "FAR05228-CHI",
+          "title": "FAR05228-CHI",
+          "category": "FURNITURE",
+          "similarity": 0.8744759559631348
+        },
+        {
+          "sku": "FAR02811-BLK",
+          "title": "FAR02811-BLK",
+          "category": "FURNITURE",
+          "similarity": 0.860609233379364
+        },
+        {
+          "sku": "FAR06461-GUN",
+          "title": "FAR06461-GUN",
+          "category": "FURNITURE",
+          "similarity": 0.8597167730331421
+        },
+        {
+          "sku": "FAR04304-CNA",
+          "title": "FAR04304-CNA",
+          "category": "FURNITURE",
+          "similarity": 0.8596551418304443
+        },
+        {
+          "sku": "FAR12040-GUN",
+          "title": "FAR12040-GUN",
+          "category": "FURNITURE",
+          "similarity": 0.8545836210250854
+        }
+      ]
+    },
+    {
+      "image_name": "FOT07800-OTT.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR06427-GRY",
+        "title": "FAR06427-GRY",
+        "category": "FURNITURE",
+        "similarity": 0.8469665050506592
+      },
+      "all_matches": [
+        {
+          "sku": "FAR06427-GRY",
+          "title": "FAR06427-GRY",
+          "category": "FURNITURE",
+          "similarity": 0.8469665050506592
+        },
+        {
+          "sku": "FAR06432-DOV",
+          "title": "FAR06432-DOV",
+          "category": "FURNITURE",
+          "similarity": 0.8451015949249268
+        },
+        {
+          "sku": "FAR06424-PEL",
+          "title": "FAR06424-PEL",
+          "category": "FURNITURE",
+          "similarity": 0.8424556255340576
+        },
+        {
+          "sku": "FAR06439-ROS",
+          "title": "FAR06439-ROS",
+          "category": "FURNITURE",
+          "similarity": 0.8390061259269714
+        },
+        {
+          "sku": "FAR06441-ALP",
+          "title": "FAR06441-ALP",
+          "category": "FURNITURE",
+          "similarity": 0.8386378288269043
+        }
+      ]
+    },
+    {
+      "image_name": "FBS13345-BON.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR16119-KSN-BS",
+        "title": "FAR16119-KSN-BS",
+        "category": "FURNITURE",
+        "similarity": 0.873434841632843
+      },
+      "all_matches": [
+        {
+          "sku": "FAR16119-KSN-BS",
+          "title": "FAR16119-KSN-BS",
+          "category": "FURNITURE",
+          "similarity": 0.873434841632843
+        },
+        {
+          "sku": "FAR16119-KSN-CS",
+          "title": "FAR16119-KSN-CS",
+          "category": "FURNITURE",
+          "similarity": 0.8648965954780579
+        },
+        {
+          "sku": "FAR06448-BON",
+          "title": "FAR06448-BON",
+          "category": "FURNITURE",
+          "similarity": 0.8518664836883545
+        },
+        {
+          "sku": "FAR12019-ALP",
+          "title": "FAR12019-ALP",
+          "category": "FURNITURE",
+          "similarity": 0.8476129174232483
+        },
+        {
+          "sku": "FAR15101-PEL",
+          "title": "FAR15101-PEL",
+          "category": "FURNITURE",
+          "similarity": 0.8461930751800537
+        }
+      ]
+    },
+    {
+      "image_name": "FBE10205-KSN.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR06787-CCA",
+        "title": "FAR06787-CCA",
+        "category": "FURNITURE",
+        "similarity": 0.7907840013504028
+      },
+      "all_matches": [
+        {
+          "sku": "FAR06787-CCA",
+          "title": "FAR06787-CCA",
+          "category": "FURNITURE",
+          "similarity": 0.7907840013504028
+        },
+        {
+          "sku": "BEJK0788-IVY",
+          "title": "BEJK0788-IVY",
+          "category": "FURNITURE",
+          "similarity": 0.7835052013397217
+        },
+        {
+          "sku": "FAR06781-ALP",
+          "title": "FAR06781-ALP",
+          "category": "FURNITURE",
+          "similarity": 0.780941367149353
+        },
+        {
+          "sku": "FAR06774-DOV",
+          "title": "FAR06774-DOV",
+          "category": "FURNITURE",
+          "similarity": 0.7780313491821289
+        },
+        {
+          "sku": "FAR06775-GRY",
+          "title": "FAR06775-GRY",
+          "category": "FURNITURE",
+          "similarity": 0.7773733735084534
+        }
+      ]
+    },
+    {
+      "image_name": "FBE13292-PEL.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR06787-CCA",
+        "title": "FAR06787-CCA",
+        "category": "FURNITURE",
+        "similarity": 0.847328245639801
+      },
+      "all_matches": [
+        {
+          "sku": "FAR06787-CCA",
+          "title": "FAR06787-CCA",
+          "category": "FURNITURE",
+          "similarity": 0.847328245639801
+        },
+        {
+          "sku": "FAR06774-DOV",
+          "title": "FAR06774-DOV",
+          "category": "FURNITURE",
+          "similarity": 0.8401894569396973
+        },
+        {
+          "sku": "FAR06427-GRY",
+          "title": "FAR06427-GRY",
+          "category": "FURNITURE",
+          "similarity": 0.8399389386177063
+        },
+        {
+          "sku": "FAR06424-PEL",
+          "title": "FAR06424-PEL",
+          "category": "FURNITURE",
+          "similarity": 0.839167594909668
+        },
+        {
+          "sku": "FAR06432-DOV",
+          "title": "FAR06432-DOV",
+          "category": "FURNITURE",
+          "similarity": 0.8385017514228821
+        }
+      ]
+    },
+    {
+      "image_name": "FBD90554-BSP.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FBD90552-BSP",
+        "title": "FBD90552-BSP",
+        "category": "FURNITURE",
+        "similarity": 1.0
+      },
+      "all_matches": [
+        {
+          "sku": "FBD90552-BSP",
+          "title": "FBD90552-BSP",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90553-BSP",
+          "title": "FBD90553-BSP",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90554-BSP",
+          "title": "FBD90554-BSP",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90671-BSP",
+          "title": "FBD90671-BSP",
+          "category": "FURNITURE",
+          "similarity": 0.9748274087905884
+        },
+        {
+          "sku": "FBD90654-BSP",
+          "title": "FBD90654-BSP",
+          "category": "FURNITURE",
+          "similarity": 0.9748274087905884
+        }
+      ]
+    },
+    {
+      "image_name": "FBD90505-BSP-GD.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FBD90510-BSP-GD",
+        "title": "FBD90510-BSP-GD",
+        "category": "FURNITURE",
+        "similarity": 1.0
+      },
+      "all_matches": [
+        {
+          "sku": "FBD90510-BSP-GD",
+          "title": "FBD90510-BSP-GD",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90505-BSP-GD",
+          "title": "FBD90505-BSP-GD",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90507-BSP-GD",
+          "title": "FBD90507-BSP-GD",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90505-BSP-BN",
+          "title": "FBD90505-BSP-BN",
+          "category": "FURNITURE",
+          "similarity": 0.9940705895423889
+        },
+        {
+          "sku": "FBD90507-BSP-BN",
+          "title": "FBD90507-BSP-BN",
+          "category": "FURNITURE",
+          "similarity": 0.9940705895423889
+        }
+      ]
+    },
+    {
+      "image_name": "FBD90772-SKY.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FBD90307-SKY",
+        "title": "FBD90307-SKY",
+        "category": "FURNITURE",
+        "similarity": 1.0
+      },
+      "all_matches": [
+        {
+          "sku": "FBD90307-SKY",
+          "title": "FBD90307-SKY",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90265-SKY",
+          "title": "FBD90265-SKY",
+          "category": "FURNITURE",
+          "similarity": 0.9171351790428162
+        },
+        {
+          "sku": "FBD90342-CCA",
+          "title": "FBD90342-CCA",
+          "category": "FURNITURE",
+          "similarity": 0.9134388566017151
+        },
+        {
+          "sku": "FBD90693-GRY-BN",
+          "title": "FBD90693-GRY-BN",
+          "category": "FURNITURE",
+          "similarity": 0.9047450423240662
+        },
+        {
+          "sku": "FBD90691-GRY-BN",
+          "title": "FBD90691-GRY-BN",
+          "category": "FURNITURE",
+          "similarity": 0.9047449827194214
+        }
+      ]
+    },
+    {
+      "image_name": "FBS09790-GUN.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR16119-KSN-BS",
+        "title": "FAR16119-KSN-BS",
+        "category": "FURNITURE",
+        "similarity": 0.8522387146949768
+      },
+      "all_matches": [
+        {
+          "sku": "FAR16119-KSN-BS",
+          "title": "FAR16119-KSN-BS",
+          "category": "FURNITURE",
+          "similarity": 0.8522387146949768
+        },
+        {
+          "sku": "FAR16119-KSN-CS",
+          "title": "FAR16119-KSN-CS",
+          "category": "FURNITURE",
+          "similarity": 0.8369807004928589
+        },
+        {
+          "sku": "FAR04304-CNA",
+          "title": "FAR04304-CNA",
+          "category": "FURNITURE",
+          "similarity": 0.8238648772239685
+        },
+        {
+          "sku": "FAR03867-PEL",
+          "title": "FAR03867-PEL",
+          "category": "FURNITURE",
+          "similarity": 0.8164695501327515
+        },
+        {
+          "sku": "FAR06451-IDG",
+          "title": "FAR06451-IDG",
+          "category": "FURNITURE",
+          "similarity": 0.8139438629150391
+        }
+      ]
+    },
+    {
+      "image_name": "FAR15048-BSP.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR15048-BSP",
+        "title": "FAR15048-BSP",
+        "category": "FURNITURE",
+        "similarity": 1.0
+      },
+      "all_matches": [
+        {
+          "sku": "FAR15048-BSP",
+          "title": "FAR15048-BSP",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FAR11706-GRN",
+          "title": "FAR11706-GRN",
+          "category": "FURNITURE",
+          "similarity": 0.9832170009613037
+        },
+        {
+          "sku": "FAR15046-BSP",
+          "title": "FAR15046-BSP",
+          "category": "FURNITURE",
+          "similarity": 0.9769163727760315
+        },
+        {
+          "sku": "FAR15047-BSP",
+          "title": "FAR15047-BSP",
+          "category": "FURNITURE",
+          "similarity": 0.9724577069282532
+        },
+        {
+          "sku": "FAR11711-PEC",
+          "title": "FAR11711-PEC",
+          "category": "FURNITURE",
+          "similarity": 0.9639690518379211
+        }
+      ]
+    },
+    {
+      "image_name": "FBD90745-EGR-BS.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FBD90743-EGR-BS",
+        "title": "FBD90743-EGR-BS",
+        "category": "FURNITURE",
+        "similarity": 1.0
+      },
+      "all_matches": [
+        {
+          "sku": "FBD90743-EGR-BS",
+          "title": "FBD90743-EGR-BS",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90744-EGR-BS",
+          "title": "FBD90744-EGR-BS",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90744-EGR-BN",
+          "title": "FBD90744-EGR-BN",
+          "category": "FURNITURE",
+          "similarity": 0.9997362494468689
+        },
+        {
+          "sku": "FBD90743-EGR-BN",
+          "title": "FBD90743-EGR-BN",
+          "category": "FURNITURE",
+          "similarity": 0.9997362494468689
+        },
+        {
+          "sku": "FBD90743-EGR-AB",
+          "title": "FBD90743-EGR-AB",
+          "category": "FURNITURE",
+          "similarity": 0.998687207698822
+        }
+      ]
+    },
+    {
+      "image_name": "FCH08467-COB.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR12002-IDG",
+        "title": "FAR12002-IDG",
+        "category": "FURNITURE",
+        "similarity": 0.9110512137413025
+      },
+      "all_matches": [
+        {
+          "sku": "FAR12002-IDG",
+          "title": "FAR12002-IDG",
+          "category": "FURNITURE",
+          "similarity": 0.9110512137413025
+        },
+        {
+          "sku": "FAR12001-IDG",
+          "title": "FAR12001-IDG",
+          "category": "FURNITURE",
+          "similarity": 0.909020185470581
+        },
+        {
+          "sku": "FAR12000-IDG",
+          "title": "FAR12000-IDG",
+          "category": "FURNITURE",
+          "similarity": 0.9080546498298645
+        },
+        {
+          "sku": "FAR12035-COB",
+          "title": "FAR12035-COB",
+          "category": "FURNITURE",
+          "similarity": 0.9066516160964966
+        },
+        {
+          "sku": "FAR01529-COB",
+          "title": "FAR01529-COB",
+          "category": "FURNITURE",
+          "similarity": 0.9061169624328613
+        }
+      ]
+    },
+    {
+      "image_name": "FCH14484-BON.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR02216-CNA",
+        "title": "FAR02216-CNA",
+        "category": "FURNITURE",
+        "similarity": 0.8986694812774658
+      },
+      "all_matches": [
+        {
+          "sku": "FAR02216-CNA",
+          "title": "FAR02216-CNA",
+          "category": "FURNITURE",
+          "similarity": 0.8986694812774658
+        },
+        {
+          "sku": "FAR02741-DOV",
+          "title": "FAR02741-DOV",
+          "category": "FURNITURE",
+          "similarity": 0.8979618549346924
+        },
+        {
+          "sku": "FAR15094-GRY",
+          "title": "FAR15094-GRY",
+          "category": "FURNITURE",
+          "similarity": 0.8960868716239929
+        },
+        {
+          "sku": "FAR11993-CCA",
+          "title": "FAR11993-CCA",
+          "category": "FURNITURE",
+          "similarity": 0.894404411315918
+        },
+        {
+          "sku": "FAR15093-GRY",
+          "title": "FAR15093-GRY",
+          "category": "FURNITURE",
+          "similarity": 0.8930287957191467
+        }
+      ]
+    },
+    {
+      "image_name": "FBE10209-CHA.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR06428-ASH",
+        "title": "FAR06428-ASH",
+        "category": "FURNITURE",
+        "similarity": 0.8130543231964111
+      },
+      "all_matches": [
+        {
+          "sku": "FAR06428-ASH",
+          "title": "FAR06428-ASH",
+          "category": "FURNITURE",
+          "similarity": 0.8130543231964111
+        },
+        {
+          "sku": "FAR06427-GRY",
+          "title": "FAR06427-GRY",
+          "category": "FURNITURE",
+          "similarity": 0.811572253704071
+        },
+        {
+          "sku": "FAR06425-OTT",
+          "title": "FAR06425-OTT",
+          "category": "FURNITURE",
+          "similarity": 0.8105162978172302
+        },
+        {
+          "sku": "FAR06432-DOV",
+          "title": "FAR06432-DOV",
+          "category": "FURNITURE",
+          "similarity": 0.8093375563621521
+        },
+        {
+          "sku": "FAR06440-CHA",
+          "title": "FAR06440-CHA",
+          "category": "FURNITURE",
+          "similarity": 0.8069241642951965
+        }
+      ]
+    },
+    {
+      "image_name": "FBD90558-CHA.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FBD90560-ASH",
+        "title": "FBD90560-ASH",
+        "category": "FURNITURE",
+        "similarity": 1.0
+      },
+      "all_matches": [
+        {
+          "sku": "FBD90560-ASH",
+          "title": "FBD90560-ASH",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90566-CHA",
+          "title": "FBD90566-CHA",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90567-ASH",
+          "title": "FBD90567-ASH",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90558-CHA",
+          "title": "FBD90558-CHA",
+          "category": "FURNITURE",
+          "similarity": 1.0
+        },
+        {
+          "sku": "FBD90551-CHA",
+          "title": "FBD90551-CHA",
+          "category": "FURNITURE",
+          "similarity": 0.9981732368469238
+        }
+      ]
+    },
+    {
+      "image_name": "FOT02805-OYS.jpg",
+      "status": "success",
+      "match_count": 5,
+      "top_match": {
+        "sku": "FAR03434-CRE",
+        "title": "FAR03434-CRE",
+        "category": "FURNITURE",
+        "similarity": 0.7987154722213745
+      },
+      "all_matches": [
+        {
+          "sku": "FAR03434-CRE",
+          "title": "FAR03434-CRE",
+          "category": "FURNITURE",
+          "similarity": 0.7987154722213745
+        },
+        {
+          "sku": "FAR01280-SNW",
+          "title": "FAR01280-SNW",
+          "category": "FURNITURE",
+          "similarity": 0.7936898469924927
+        },
+        {
+          "sku": "FAR05414-WTE",
+          "title": "FAR05414-WTE",
+          "category": "FURNITURE",
+          "similarity": 0.7934442162513733
+        },
+        {
+          "sku": "FAR06718-OYS",
+          "title": "FAR06718-OYS",
+          "category": "FURNITURE",
+          "similarity": 0.7934442162513733
+        },
+        {
+          "sku": "FAR02796-CCA",
+          "title": "FAR02796-CCA",
+          "category": "FURNITURE",
+          "similarity": 0.7925726771354675
+        }
+      ]
+    }
+  ]
+}

@@ -26,6 +26,13 @@ requests>=2.31.0
 httpx>=0.24.1
 aiohttp>=3.8.0
 aiomysql>=0.2.0
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+gunicorn>=21.2.0
+python-multipart>=0.0.6
+
+# AWS S3 (for vector database download)
+boto3>=1.28.0
 
 # Configuration
 pyyaml>=6.0

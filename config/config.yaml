@@ -24,17 +24,17 @@ categories:
 
 # CLIP Model Configuration
 clip:
-  model_name: "ViT-B/32"  # Options: ViT-B/32, ViT-B/16, ViT-L/14
+  model_name: "ViT-L/14"  # Options: ViT-B/32, ViT-B/16, ViT-L/14
   pretrained: "openai"
-  device: "cuda"  # cuda or cpu
-  batch_size: 32
+  device: "cpu"  # cuda or cpu (set to 'cpu' for Apple Silicon M4 Pro)
+  batch_size: 16  # Reduced batch size for ViT-L/14 (larger model)
   image_size: 224
 
 # Grounding DINO Configuration
 grounding_dino:
   config_file: "GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py"
   checkpoint_path: "weights/groundingdino_swint_ogc.pth"
-  device: "cuda"
+  device: "cpu"  # set to 'cpu' for Apple Silicon M4 Pro
   box_threshold: 0.35
   text_threshold: 0.25
   # Text prompts for detection
@@ -48,8 +48,8 @@ grounding_dino:
 
 # FAISS Vector Database Configuration
 faiss:
-  index_type: "IndexFlatL2"  # Options: IndexFlatL2, IndexIVFFlat, IndexHNSWFlat
-  dimension: 512  # CLIP ViT-B/32 output dimension
+  index_type: "IndexFlatL2"  # Options: IndexFlatL2, IndexIVFFlat, IndexHNSWFlat (HNSW has OpenMP conflicts on Apple Silicon)
+  dimension: 768  # CLIP ViT-L/14 output dimension (768 vs 512 for ViT-B/32)
   nlist: 100  # Number of clusters for IVF
   save_path: "data/embeddings/faiss_index.bin"
   metadata_path: "data/embeddings/sku_metadata.pkl"
@@ -67,6 +67,22 @@ inference:
   top_k: 5  # Return top-k similar SKUs
   enable_visualization: true
   output_dir: "output"
+
+# API Server Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 1  # Number of Uvicorn workers
+  reload: false  # Set to true for development
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://127.0.0.1:3000"
+    - "http://localhost:3001"
+  max_upload_size_mb: 10
+  max_batch_size: 20
+  rate_limit:
+    enabled: false  # Enable in production
+    requests_per_minute: 60
 
 # Logging
 logging:
