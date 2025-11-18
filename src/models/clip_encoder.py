@@ -7,7 +7,13 @@ import numpy as np
 import torch
 import open_clip
 from PIL import Image
-from tqdm import tqdm
+
+# tqdm is optional - only needed for batch processing with progress bars
+try:
+    from tqdm import tqdm
+    TQDM_AVAILABLE = True
+except ImportError:
+    TQDM_AVAILABLE = False
 
 logger = logging.getLogger(__name__)
 
@@ -114,7 +120,7 @@ class CLIPEncoder:
 
         # Process in batches
         iterator = range(0, len(pil_images), self.batch_size)
-        if show_progress:
+        if show_progress and TQDM_AVAILABLE:
             iterator = tqdm(iterator, desc="Encoding images")
 
         for i in iterator:
@@ -158,7 +164,7 @@ class CLIPEncoder:
         embeddings = []
 
         iterator = range(0, len(image_paths), self.batch_size)
-        if show_progress:
+        if show_progress and TQDM_AVAILABLE:
             iterator = tqdm(iterator, desc="Encoding images from files")
 
         for i in iterator:

@@ -66,6 +66,11 @@ class SKURecognitionPipeline:
 
         logger.info("SKU Recognition Pipeline initialized")
 
+    @property
+    def sku_metadata(self) -> List[Dict[str, Any]]:
+        """Get SKU metadata from vector database"""
+        return self.vector_db.metadata
+
     def _default_config(self) -> Dict[str, Any]:
         """Return default configuration"""
         return {
@@ -199,28 +204,69 @@ class SKURecognitionPipeline:
     def process_image(
         self,
         image: Union[Image.Image, np.ndarray, Path],
+        top_k: Optional[int] = None,
+        confidence_threshold: Optional[float] = None,
         text_prompt: Optional[str] = None,
         visualize: bool = False,
         output_dir: Optional[Path] = None,
     ) -> List[Dict[str, Any]]:
         """
-        Complete pipeline: detect products and recognize SKUs
+        Process image for SKU recognition
+
+        In production mode (no detector), recognizes SKU directly from the full image.
+        In training mode (with detector), detects products first, then recognizes each.
 
         Args:
             image: Input image
-            text_prompt: Text prompt for detection
+            top_k: Number of top results to return (overrides config)
+            confidence_threshold: Minimum confidence score (overrides config)
+            text_prompt: Text prompt for detection (detector mode only)
             visualize: Whether to save visualizations
             output_dir: Directory to save outputs
 
         Returns:
-            List of detection results with SKU information
+            List of SKU match results
         """
+        if top_k is None:
+            top_k = self.top_k
+        if confidence_threshold is None:
+            confidence_threshold = self.confidence_threshold
+
         # Load image if path
         if isinstance(image, (str, Path)):
             image_path = Path(image)
             image = load_image(image)
         else:
             image_path = None
+
+        # Production mode: no detector, direct SKU recognition
+        if self.detector is None:
+            logger.debug("Processing image without detector (production mode)")
+            embedding = self.clip_model.encode_image(image)
+            results, similarities = self.vector_db.search(
+                embedding,
+                k=top_k,
+                return_distances=True,
+            )
+
+            # Format results for API compatibility
+            formatted_results = []
+            for result, similarity in zip(results, similarities):
+                if similarity >= confidence_threshold:
+                    formatted_results.append({
+                        'sku': result.get('sku', result.get('SKU', '')),
+                        'similarity': float(similarity),
+                        'product_title': result.get('product_title', result.get('title', '')),
+                        'category': result.get('category', ''),
+                        'retail_price': result.get('retail_price'),
+                        'image_url': result.get('image_url', ''),
+                        'barcode': result.get('barcode', ''),
+                    })
+
+            return formatted_results
+
+        # Training mode: use detector for product detection
+        logger.debug("Processing image with detector (training mode)")
 
         # Step 1: Detect products
         boxes, scores, labels = self.detect_products(image, text_prompt)
