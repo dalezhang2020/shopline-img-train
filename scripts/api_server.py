@@ -25,7 +25,6 @@ from PIL import Image
 import numpy as np
 
 from src.pipeline.inference import SKURecognitionPipeline
-from src.utils.image_utils import preprocess_image
 
 # Configure logging
 logging.basicConfig(
