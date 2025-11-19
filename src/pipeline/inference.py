@@ -136,6 +136,11 @@ class SKURecognitionPipeline:
         self.vector_db.load(index_path, metadata_path)
         logger.info(f"Database loaded: {self.vector_db.get_stats()}")
 
+    @property
+    def sku_metadata(self) -> List[Dict[str, Any]]:
+        """Get SKU metadata from vector database (for API compatibility)"""
+        return self.vector_db.metadata
+
     def detect_products(
         self,
         image: Union[Image.Image, np.ndarray, Path],
